@@ -17,5 +17,5 @@ jobs:
       - run: |
           git config user.name "gampluse-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add news.json
-          git diff --cached --quiet || (git commit -m "Daily news refresh" && git push)
+          git add -A
+          git diff --cached --quiet || (git commit -m "Daily refresh" && git push)
