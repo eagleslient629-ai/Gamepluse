@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>gampluse – Mission: next news</title>
+<style>
+:root{--bg:#f4f5fb;--card:#fff;--ink:#14162a;--mut:#5f6480;--line:#dde0ef;--acc:#6c3df4;--hot:#e5365b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0c18;--card:#14162b;--ink:#eceefb;--mut:#9aa0c4;--line:#262a4a;--acc:#8f6bff;--hot:#ff5c7f}}
+:root[data-theme="dark"]{--bg:#0b0c18;--card:#14162b;--ink:#eceefb;--mut:#9aa0c4;--line:#262a4a;--acc:#8f6bff;--hot:#ff5c7f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:900px;margin:0 auto;padding:16px}
+header{padding:28px 0 8px}
+h1{margin:0;font-size:2.2rem;letter-spacing:-1px}
+h1 b{color:var(--acc)}
+.tag{color:var(--mut);margin:2px 0 0;font-weight:600;letter-spacing:.5px;text-transform:uppercase;font-size:.8rem}
+nav{display:flex;gap:8px;margin:16px 0;flex-wrap:wrap}
+nav a{padding:8px 14px;border:1px solid var(--line);border-radius:99px;color:var(--ink);text-decoration:none;font-size:.9rem;background:var(--card)}
+h2{font-size:1.2rem;margin:26px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.deal{display:block;padding:14px;border-radius:14px;background:var(--card);border:1px solid var(--line);color:var(--ink);text-decoration:none}
+.deal strong{display:block}
+.deal span{color:var(--mut);font-size:.85rem}
+.deal.hot{border-color:var(--hot)}
+.deal .b{display:inline-block;background:var(--hot);color:#fff;border-radius:6px;padding:1px 7px;font-size:.75rem;font-weight:700;margin-bottom:6px}
+.news{display:block;padding:14px;margin-bottom:10px;border-radius:14px;background:var(--card);border:1px solid var(--line);color:var(--ink);text-decoration:none}
+.news small{color:var(--mut)}
+.news h3{margin:2px 0 4px;font-size:1.02rem}
+.news p{margin:0;color:var(--mut);font-size:.9rem}
+.admin{border:2px dashed var(--acc);border-radius:14px;padding:14px;background:var(--card)}
+.admin input,.admin textarea,.admin select{width:100%;margin:5px 0;padding:11px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+button{background:var(--acc);color:#fff;border:0;border-radius:10px;padding:11px 16px;font:inherit;font-weight:700}
+button.x{background:transparent;color:var(--hot);padding:4px 8px}
+.note{color:var(--mut);font-size:.85rem;margin:6px 0}
+footer{color:var(--mut);font-size:.8rem;padding:30px 0}
+</style>
+</head>
+<body>
+<div class="w">
+<header>
+<h1>gam<b>pluse</b></h1>
+<p class="tag">Mission: next news</p>
+<p class="note">News refreshes automatically every day at 9:00 AM IST.</p>
+</header>
+<nav><a href="#deals">Deals</a><a href="#news">News</a><a href="#sources">Sources</a></nav>
+
+<h2 id="deals">Game deals</h2>
+<div class="grid" id="dealGrid"></div>
+
+<h2 id="news">Latest news</h2>
+<p class="note" id="stamp">News refreshes automatically every day at 9:00 AM IST (India Standard Time).</p>
+<div id="newsList"></div>
+
+<h2 id="sources">News sources</h2>
+<div class="grid">
+<a class="deal" href="https://www.ign.com/news" target="_blank" rel="noopener"><strong>IGN</strong><span>Breaking news and reviews</span></a>
+<a class="deal" href="https://www.pcgamer.com/news/" target="_blank" rel="noopener"><strong>PC Gamer</strong><span>PC news</span></a>
+<a class="deal" href="https://www.gamesradar.com/news/" target="_blank" rel="noopener"><strong>GamesRadar+</strong><span>All platforms</span></a>
+<a class="deal" href="https://www.gematsu.com/" target="_blank" rel="noopener"><strong>Gematsu</strong><span>Japanese and console releases</span></a>
+</div>
+<footer>gampluse · Mission: next news. Deal pages are live store links. Deal pages are live store links, so prices are always current at the store.</footer>
+</div>
+
+<script>
+var DEALS=[
+{t:"Epic Savings sale (to Nov 26)",u:"https://store.epicgames.com/sales-and-specials/epic-savings",d:"Discounts across the Epic Games Store, dates as reported",hot:1,b:"EPIC"},
+{t:"Epic Black Friday: Premium Editions (Nov 17 – Dec 1)",u:"https://store.epicgames.com/en-US/browse?sortBy=currentPrice&sortDir=ASC&priceTier=tierDiscouted&count=40",d:"Epic's Black Friday sale list, dates as reported",hot:1,b:"EPIC"},
+{t:"Steam Black Friday week (Nov 26–30)",u:"https://store.steampowered.com/specials",d:"Publisher discounts, not a storewide sale. Winter Sale Dec 17 – Jan 4",hot:1,b:"STEAM"},
+{t:"Steam Specials",u:"https://store.steampowered.com/specials",d:"All current Steam discounts",hot:1,b:"STEAM"},
+{t:"Steam: everything on sale",u:"https://store.steampowered.com/search/?specials=1",d:"Search results filtered to discounted games",b:"STEAM"},
+{t:"Epic free games",u:"https://store.epicgames.com/en-US/free-games",d:"Free this week, claim and keep",hot:1,b:"EPIC"},
+{t:"Epic: discounted games",u:"https://store.epicgames.com/en-US/browse?sortBy=currentPrice&sortDir=ASC&priceTier=tierDiscouted&count=40",d:"Epic Games Store sale list",b:"EPIC"},
+{t:"IsThereAnyDeal",u:"https://isthereanydeal.com/deals/",d:"Biggest discounts across every store",hot:1,b:"MASSIVE"},
+{t:"GG.deals",u:"https://gg.deals/deals/",d:"Best prices and historical lows",hot:1,b:"MASSIVE"}
+];
+var SEED=[
+{t:"GitHub disables 144 Switch modchip firmware repositories",u:"https://www.gaming.net/?p=607456",d:"Reported November 11.",w:"gaming.net"},
+{t:"Hogwarts Legacy gets DLSS 5 neural rendering on GeForce NOW",u:"https://www.gaming.net/?p=607456",d:"Reported November 5.",w:"gaming.net"},
+{t:"Nexus Mods expands AI rules but rejects an outright ban",u:"https://www.gaming.net/?p=607456",d:"Reported November 3.",w:"gaming.net"},
+{t:"Pikmin Day Direct details game expansion and demo",u:"https://simulationdaily.com/news/today-in-gaming-news-november-2-2026/",d:"Nintendo's special Direct for November 1.",w:"Simulation Daily"},
+{t:"Epic Games lays off more than 1,000 people",u:"https://www.pcgamer.com/gaming-industry/news/",d:"CEO Tim Sweeney commented on the cuts.",w:"PC Gamer"},
+{t:"Amazon keeps scaling back its games push",u:"https://www.pcgamer.com/au/gaming-industry/news/page/7",d:"It ended a publishing deal for a new racing game.",w:"PC Gamer"},
+{t:"Ubisoft orders full return to office, more studio closures coming",u:"https://www.pcgamer.com/gaming-industry/page/7/",d:"Ubisoft confirmed further closures.",w:"PC Gamer"},
+{t:"Double Fine files to unionize",u:"https://www.pcgamer.com/au/gaming-industry/news/",d:"The Psychonauts and Keeper studio filed with the NLRB.",w:"PC Gamer"},
+{t:"Xbox restructuring: about 3,200 jobs to be cut",u:"https://www.kuow.org/stories/what-xbox-s-layoffs-massive-reboot-says-about-the-gaming-industry",d:"Microsoft called it the biggest restructuring in Xbox history (July 2026).",w:"KUOW"},
+{t:"Nintendo Direct: new 2D Metroid, Mario Kart World update, big Kirby reveal",u:"https://www.techradar.com/nz/news/gaming/consoles",d:"Everything announced in the November 9 Direct.",w:"TechRadar"},
+{t:"Fable gets a quest gameplay trailer",u:"https://simulationdaily.com/news/today-in-gaming-news-november-12-2026/",d:"New footage shown November 12.",w:"Simulation Daily"},
+{t:"Wuthering Waves version 4.0 release date announced",u:"https://simulationdaily.com/news/today-in-gaming-news-november-19-2026/",d:"Plus Gently Packed launches in Early Access.",w:"Simulation Daily"},
+{t:"Temtem: Swarm gets Switch date with cross-platform support",u:"https://simulationdaily.com/news/today-in-gaming-news-november-20-2026/",d:"Also in the November 20 roundup: Goodbye Seoul.",w:"Simulation Daily"},
+{t:"Cities: Skylines II Park Adventures: $19.99, free to try on Steam Nov 12–16",u:"https://simulationdaily.com/news/today-in-gaming-news-november-11-2026/",d:"Included in Expansion Pass II.",w:"Simulation Daily"},
+{t:"Warhammer 40,000: Dark Heresy launches January 28, 2027",u:"https://simulationdaily.com/news/today-in-gaming-news-november-9-2026/",d:"Announced by Owlcat Games.",w:"Simulation Daily"},
+{t:"PlayStation Plus is losing 11 games in November",u:"https://comicbook.com/gaming/news/playstation-ps-plus-games-november-2026-leaving/",d:"Leaving the subscription this month.",w:"ComicBook.com"}
+];
+function esc(s){var e=document.createElement("div");e.textContent=s==null?"":String(s);return e.innerHTML}
+function safe(u){return /^https?:\/\//i.test(u)?u:"#"}
+function dealHTML(x){return '<a class="deal'+(x.hot?' hot':'')+'" href="'+esc(safe(x.u))+'" target="_blank" rel="noopener">'+(x.b?'<span class="b">'+esc(x.b)+'</span>':'')+'<strong>'+esc(x.t)+'</strong><span>'+esc(x.d)+'</span></a>'}
+function newsHTML(x,id){return '<a class="news" href="'+esc(safe(x.u))+'" target="_blank" rel="noopener"><small>'+esc(x.w||"gampluse")+'</small><h3>'+esc(x.t)+'</h3><p>'+esc(x.d)+'</p>'+(id?'<button class="x" data-del="'+esc(id)+'">remove</button>':'')+'</a>'}
+document.getElementById("dealGrid").innerHTML=DEALS.map(dealHTML).join("");
+
+function show(items){document.getElementById("newsList").innerHTML=items.map(function(x){return newsHTML(x)}).join("")}
+fetch("news.json",{cache:"no-store"}).then(function(r){return r.json()}).then(function(j){
+  if(j.items&&j.items.length){show(j.items);if(j.updated)document.getElementById("stamp").textContent="News refreshes automatically every day at 9:00 AM IST. Last refreshed: "+j.updated+"."}
+  else show(SEED)
+}).catch(function(){show(SEED)});
+</script>
+</body>
+</html>
