@@ -36,13 +36,16 @@ h2:before{content:"";width:6px;height:20px;background:linear-gradient(var(--pu),
 .card{display:block;background:var(--card);border:1px solid var(--ln);border-radius:14px;overflow:hidden;transition:.2s}
 a.card:hover{border-color:var(--cy);box-shadow:0 0 18px rgba(34,211,238,.25);transform:translateY(-2px)}
 .card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#0c0f1d}
+.thumb{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#2b1a63,#0b3646);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.thumb .ph{color:rgba(238,240,251,.35);font-weight:900;letter-spacing:.2em;text-transform:uppercase;font-size:.85rem;text-align:center;padding:8px}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}
 .in{padding:12px 14px 14px}
 .src{color:var(--cy);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
 .card h3{margin:4px 0;font-size:1rem;line-height:1.3}
 .meta{color:var(--mut);font-size:.8rem}
 .tag{display:inline-block;margin:6px 6px 0 0;padding:1px 8px;border:1px solid var(--ln);border-radius:99px;font-size:.68rem;color:var(--mut)}
 .feat{display:grid}
-@media(min-width:760px){.feat{grid-template-columns:1.4fr 1fr}.feat img{height:100%;aspect-ratio:auto;min-height:240px}.feat h3{font-size:1.5rem}}
+@media(min-width:760px){.feat{grid-template-columns:1.4fr 1fr}.feat .thumb{aspect-ratio:auto;min-height:240px}.feat h3{font-size:1.5rem}}
 .feat .in{align-self:center;padding:18px}
 .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
 .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
@@ -105,7 +108,7 @@ function ok(u){return /^https:\/\//i.test(u||"")}
 function im(u){return ok(u)?'<img src="'+esc(u)+'" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">':""}
 function money(c,cur){try{return new Intl.NumberFormat("en-US",{style:"currency",currency:cur||"USD"}).format(c/100)}catch(e){return(c/100).toFixed(2)}}
 function get(u){return fetch(u,{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()})}
-function story(x,big){return '<a class="card'+(big?' feat':'')+'" href="'+esc(ok(x.u)?x.u:"#")+'" target="_blank" rel="noopener">'+im(x.i)+'<div class="in"><div class="src">'+esc(x.w)+'</div><h3>'+esc(x.t)+'</h3><div class="meta">'+esc(x.d)+'</div>'+(x.p||[]).map(function(p){return'<span class="tag">'+esc(p)+'</span>'}).join("")+'</div></a>'}
+function story(x,big){return '<a class="card'+(big?' feat':'')+'" href="'+esc(ok(x.u)?x.u:"#")+'" target="_blank" rel="noopener">'+'<div class="thumb"><span class="ph">'+esc(x.w)+'</span>'+im(x.i)+'</div><div class="in"><div class="src">'+esc(x.w)+'</div><h3>'+esc(x.t)+'</h3><div class="meta">'+esc(x.d)+'</div>'+(x.p||[]).map(function(p){return'<span class="tag">'+esc(p)+'</span>'}).join("")+'</div></a>'}
 function draw(){
   var f=news.filter(function(x){return ok(x.i)})[0]||news[0];
   $("feat").innerHTML=f?story(f,1):'<div class="empty">News loads after the first 9:00 AM refresh.</div>';
