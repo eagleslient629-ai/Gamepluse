@@ -2,108 +2,131 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>gampluse – Mission: next news</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GAMPLUSE – Level up your gaming world</title>
+<meta name="description" content="Gaming news and real game deals, refreshed every morning. Mission: next news.">
+<meta name="theme-color" content="#101322">
 <style>
-:root{--bg:#f4f5fb;--card:#fff;--ink:#14162a;--mut:#5f6480;--line:#dde0ef;--acc:#6c3df4;--hot:#e5365b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0c18;--card:#14162b;--ink:#eceefb;--mut:#9aa0c4;--line:#262a4a;--acc:#8f6bff;--hot:#ff5c7f}}
-:root[data-theme="dark"]{--bg:#0b0c18;--card:#14162b;--ink:#eceefb;--mut:#9aa0c4;--line:#262a4a;--acc:#8f6bff;--hot:#ff5c7f}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
+:root{--bg:#101322;--card:#191D30;--pu:#8B5CF6;--cy:#22D3EE;--ink:#eef0fb;--mut:#9aa1c4;--ln:rgba(139,92,246,.35)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.w{max-width:900px;margin:0 auto;padding:16px}
-header{padding:28px 0 8px}
-h1{margin:0;font-size:2.2rem;letter-spacing:-1px}
-h1 b{color:var(--acc)}
-.tag{color:var(--mut);margin:2px 0 0;font-weight:600;letter-spacing:.5px;text-transform:uppercase;font-size:.8rem}
-nav{display:flex;gap:8px;margin:16px 0;flex-wrap:wrap}
-nav a{padding:8px 14px;border:1px solid var(--line);border-radius:99px;color:var(--ink);text-decoration:none;font-size:.9rem;background:var(--card)}
-h2{font-size:1.2rem;margin:26px 0 10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
-.deal{display:block;padding:14px;border-radius:14px;background:var(--card);border:1px solid var(--line);color:var(--ink);text-decoration:none}
-.deal strong{display:block}
-.deal span{color:var(--mut);font-size:.85rem}
-.deal.hot{border-color:var(--hot)}
-.deal .b{display:inline-block;background:var(--hot);color:#fff;border-radius:6px;padding:1px 7px;font-size:.75rem;font-weight:700;margin-bottom:6px}
-.news{display:block;padding:14px;margin-bottom:10px;border-radius:14px;background:var(--card);border:1px solid var(--line);color:var(--ink);text-decoration:none}
-.news small{color:var(--mut)}
-.news h3{margin:2px 0 4px;font-size:1.02rem}
-.news p{margin:0;color:var(--mut);font-size:.9rem}
-.admin{border:2px dashed var(--acc);border-radius:14px;padding:14px;background:var(--card)}
-.admin input,.admin textarea,.admin select{width:100%;margin:5px 0;padding:11px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
-button{background:var(--acc);color:#fff;border:0;border-radius:10px;padding:11px 16px;font:inherit;font-weight:700}
-button.x{background:transparent;color:var(--hot);padding:4px 8px}
-.note{color:var(--mut);font-size:.85rem;margin:6px 0}
-footer{color:var(--mut);font-size:.8rem;padding:30px 0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;color:var(--ink);font:16px/1.55 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;background:var(--bg) radial-gradient(60% 40% at 85% 0,rgba(139,92,246,.28),transparent),radial-gradient(50% 35% at 0 25%,rgba(34,211,238,.14),transparent) fixed}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(rgba(139,92,246,.05) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,rgba(34,211,238,.04) 1px,transparent 1px) 0 0/40px 40px}
+a{color:inherit;text-decoration:none}
+.w{max-width:1040px;margin:0 auto;padding:0 16px;position:relative}
+header{position:sticky;top:0;z-index:10;background:rgba(16,19,34,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--ln)}
+.hd{display:flex;align-items:center;gap:14px;padding:10px 0}
+.logo{font-weight:900;font-size:1.3rem;letter-spacing:.14em}
+.logo b{color:var(--cy);text-shadow:0 0 14px var(--cy)}
+nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+nav a{padding:6px 12px;border-radius:99px;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);white-space:nowrap}
+nav a:hover{color:var(--cy);background:rgba(34,211,238,.1)}
+.hero{display:grid;gap:18px;padding:34px 0 22px;align-items:center}
+@media(min-width:760px){.hero{grid-template-columns:1.2fr 1fr}}
+.eyebrow{color:var(--cy);font-size:.75rem;letter-spacing:.3em;text-transform:uppercase}
+h1{margin:6px 0 10px;font-size:clamp(2rem,8vw,3.4rem);line-height:1.05;text-transform:uppercase;letter-spacing:.03em;font-weight:900;background:linear-gradient(90deg,#fff,var(--pu) 55%,var(--cy));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mut);margin:0 0 16px;max-width:46ch}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;margin:0 8px 8px 0;border:1px solid var(--pu)}
+.btn.p{background:var(--pu);box-shadow:0 0 22px rgba(139,92,246,.6)}
+.btn.s{color:var(--cy);border-color:var(--cy)}
+.art svg{width:100%;max-width:340px;display:block;margin:auto;filter:drop-shadow(0 0 12px var(--pu)) drop-shadow(0 0 26px rgba(34,211,238,.45))}
+h2{margin:34px 0 12px;font-size:1.05rem;text-transform:uppercase;letter-spacing:.2em;display:flex;align-items:center;gap:10px}
+h2:before{content:"";width:6px;height:20px;background:linear-gradient(var(--pu),var(--cy));border-radius:3px;box-shadow:0 0 10px var(--pu)}
+.sub{color:var(--mut);font-size:.82rem;margin:-6px 0 12px}
+.card{display:block;background:var(--card);border:1px solid var(--ln);border-radius:14px;overflow:hidden;transition:.2s}
+a.card:hover{border-color:var(--cy);box-shadow:0 0 18px rgba(34,211,238,.25);transform:translateY(-2px)}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#0c0f1d}
+.in{padding:12px 14px 14px}
+.src{color:var(--cy);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.card h3{margin:4px 0;font-size:1rem;line-height:1.3}
+.meta{color:var(--mut);font-size:.8rem}
+.tag{display:inline-block;margin:6px 6px 0 0;padding:1px 8px;border:1px solid var(--ln);border-radius:99px;font-size:.68rem;color:var(--mut)}
+.feat{display:grid}
+@media(min-width:760px){.feat{grid-template-columns:1.4fr 1fr}.feat img{height:100%;aspect-ratio:auto;min-height:240px}.feat h3{font-size:1.5rem}}
+.feat .in{align-self:center;padding:18px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
+.chip{flex:none;padding:7px 16px;border-radius:99px;border:1px solid var(--ln);background:transparent;color:var(--mut);font:inherit;font-size:.82rem;cursor:pointer}
+.chip.on{background:var(--pu);color:#fff;border-color:var(--pu);box-shadow:0 0 14px rgba(139,92,246,.6)}
+.plat{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.plat button{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:18px 10px;color:var(--ink);font:inherit;cursor:pointer;text-align:center}
+.plat button:hover{border-color:var(--cy);box-shadow:0 0 16px rgba(34,211,238,.25)}
+.plat strong{display:block;letter-spacing:.1em;text-transform:uppercase}
+.plat span{color:var(--mut);font-size:.8rem}
+.badge{position:absolute;top:8px;left:8px;background:var(--cy);color:#04121a;font-weight:800;font-size:.75rem;padding:2px 9px;border-radius:6px}
+.rel{position:relative}
+.price{margin-top:6px;font-weight:700}
+.price s{color:var(--mut);font-weight:400;margin-right:6px}
+.price em{color:var(--cy);font-style:normal}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.links a{padding:7px 14px;border:1px solid var(--cy);color:var(--cy);border-radius:10px;font-size:.8rem}
+.poll{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:16px}
+.poll button{display:block;width:100%;text-align:left;margin:8px 0;padding:11px 14px;background:transparent;border:1px solid var(--ln);border-radius:10px;color:var(--ink);font:inherit;cursor:pointer}
+.poll button.on{border-color:var(--cy);background:rgba(34,211,238,.12)}
+.empty{color:var(--mut);padding:14px;border:1px dashed var(--ln);border-radius:12px}
+footer{margin-top:44px;border-top:1px solid var(--ln);padding:26px 0 40px;color:var(--mut);font-size:.88rem}
+footer .cols{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+footer h4{margin:0 0 6px;color:var(--ink);text-transform:uppercase;letter-spacing:.14em;font-size:.8rem}
+footer a{color:var(--cy)}
 </style>
 </head>
 <body>
-<div class="w">
-<header>
-<h1>gam<b>pluse</b></h1>
-<p class="tag">Mission: next news</p>
-<p class="note">News refreshes automatically every day at 9:00 AM IST.</p>
-</header>
-<nav><a href="#deals">Deals</a><a href="#news">News</a><a href="#sources">Sources</a></nav>
+<header><div class="w hd"><a class="logo" href="#top">GAM<b>PLUSE</b></a>
+<nav><a href="#latest">News</a><a href="#platforms">Platforms</a><a href="#deals">Deals</a><a href="#trending">Trending</a><a href="#community">Community</a></nav></div></header>
+<main class="w" id="top">
+<section class="hero"><div>
+<div class="eyebrow">Mission: next news</div>
+<h1>Level up your gaming world.</h1>
+<p>Fresh gaming news and real store deals, updated automatically every morning at 9:00 AM IST.</p>
+<a class="btn p" href="#latest">Latest news</a><a class="btn s" href="#deals">Today's deals</a></div>
+<div class="art"><svg viewBox="0 0 320 200" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><g fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M80 50h160c30 0 50 30 58 80 4 28-10 44-30 36-14-5-24-20-36-30H88c-12 10-22 25-36 30-20 8-34-8-30-36 8-50 28-80 58-80z"/><path d="M92 90v36M74 108h36"/><circle cx="224" cy="96" r="8"/><circle cx="248" cy="112" r="8"/><circle cx="200" cy="112" r="8"/><circle cx="224" cy="128" r="8"/></g></svg></div></section>
 
-<h2 id="deals">Game deals</h2>
-<div class="grid" id="dealGrid"></div>
-
-<h2 id="news">Latest news</h2>
-<p class="note" id="stamp">News refreshes automatically every day at 9:00 AM IST (India Standard Time).</p>
-<div id="newsList"></div>
-
-<h2 id="sources">News sources</h2>
-<div class="grid">
-<a class="deal" href="https://www.ign.com/news" target="_blank" rel="noopener"><strong>IGN</strong><span>Breaking news and reviews</span></a>
-<a class="deal" href="https://www.pcgamer.com/news/" target="_blank" rel="noopener"><strong>PC Gamer</strong><span>PC news</span></a>
-<a class="deal" href="https://www.gamesradar.com/news/" target="_blank" rel="noopener"><strong>GamesRadar+</strong><span>All platforms</span></a>
-<a class="deal" href="https://www.gematsu.com/" target="_blank" rel="noopener"><strong>Gematsu</strong><span>Japanese and console releases</span></a>
-</div>
-<footer>gampluse · Mission: next news. Deal pages are live store links. Deal pages are live store links, so prices are always current at the store.</footer>
-</div>
-
+<h2>Featured story</h2><div id="feat"></div>
+<h2 id="latest">Latest news</h2><p class="sub" id="stamp"></p>
+<div class="chips" id="chips"></div><div class="grid" id="list"></div>
+<h2 id="platforms">Platforms</h2><div class="plat" id="plat"></div>
+<h2 id="deals">Today's game deals</h2>
+<div class="links"><a href="https://store.steampowered.com/specials" target="_blank" rel="noopener">Steam specials</a><a href="https://store.epicgames.com/en-US/free-games" target="_blank" rel="noopener">Epic free games</a><a href="https://isthereanydeal.com/deals/" target="_blank" rel="noopener">IsThereAnyDeal</a><a href="https://gg.deals/deals/" target="_blank" rel="noopener">GG.deals</a></div>
+<p class="sub" id="dstamp"></p><div class="grid" id="deal"></div>
+<h2 id="trending">Trending games</h2><p class="sub">Top sellers on Steam right now.</p><div class="grid" id="trend"></div>
+<h2 id="community">Community poll</h2>
+<div class="poll"><strong>Which platform do you play on most?</strong><div id="poll"></div><p class="meta">Your vote is saved on this device only. Shared results need a backend, which gampluse doesn't have yet.</p></div>
+</main>
+<footer><div class="w"><div class="cols">
+<div id="about"><h4>About</h4>GAMPLUSE collects gaming headlines and store deals in one place and refreshes them every morning. It's an independent project.</div>
+<div id="contact"><h4>Contact</h4>Feedback or ideas? <a href="https://github.com/eagleslient629-ai/Gamepluse/issues" target="_blank" rel="noopener">Open an issue on GitHub</a>.</div>
+<div id="sources"><h4>Sources</h4>News: IGN, PC Gamer, GamesRadar+, Eurogamer, Gematsu. Deals: Steam and Epic Games Store public store data. Every card links to its original page.</div>
+<div id="privacy"><h4>Privacy</h4>No accounts, no tracking and no cookies from us. The poll vote stays in your browser.</div>
+</div><p>© GAMPLUSE · Mission: next news</p></div></footer>
 <script>
-var DEALS=[
-{t:"Epic Savings sale (to Nov 26)",u:"https://store.epicgames.com/sales-and-specials/epic-savings",d:"Discounts across the Epic Games Store, dates as reported",hot:1,b:"EPIC"},
-{t:"Epic Black Friday: Premium Editions (Nov 17 – Dec 1)",u:"https://store.epicgames.com/en-US/browse?sortBy=currentPrice&sortDir=ASC&priceTier=tierDiscouted&count=40",d:"Epic's Black Friday sale list, dates as reported",hot:1,b:"EPIC"},
-{t:"Steam Black Friday week (Nov 26–30)",u:"https://store.steampowered.com/specials",d:"Publisher discounts, not a storewide sale. Winter Sale Dec 17 – Jan 4",hot:1,b:"STEAM"},
-{t:"Steam Specials",u:"https://store.steampowered.com/specials",d:"All current Steam discounts",hot:1,b:"STEAM"},
-{t:"Steam: everything on sale",u:"https://store.steampowered.com/search/?specials=1",d:"Search results filtered to discounted games",b:"STEAM"},
-{t:"Epic free games",u:"https://store.epicgames.com/en-US/free-games",d:"Free this week, claim and keep",hot:1,b:"EPIC"},
-{t:"Epic: discounted games",u:"https://store.epicgames.com/en-US/browse?sortBy=currentPrice&sortDir=ASC&priceTier=tierDiscouted&count=40",d:"Epic Games Store sale list",b:"EPIC"},
-{t:"IsThereAnyDeal",u:"https://isthereanydeal.com/deals/",d:"Biggest discounts across every store",hot:1,b:"MASSIVE"},
-{t:"GG.deals",u:"https://gg.deals/deals/",d:"Best prices and historical lows",hot:1,b:"MASSIVE"}
-];
-var SEED=[
-{t:"GitHub disables 144 Switch modchip firmware repositories",u:"https://www.gaming.net/?p=607456",d:"Reported November 11.",w:"gaming.net"},
-{t:"Hogwarts Legacy gets DLSS 5 neural rendering on GeForce NOW",u:"https://www.gaming.net/?p=607456",d:"Reported November 5.",w:"gaming.net"},
-{t:"Nexus Mods expands AI rules but rejects an outright ban",u:"https://www.gaming.net/?p=607456",d:"Reported November 3.",w:"gaming.net"},
-{t:"Pikmin Day Direct details game expansion and demo",u:"https://simulationdaily.com/news/today-in-gaming-news-november-2-2026/",d:"Nintendo's special Direct for November 1.",w:"Simulation Daily"},
-{t:"Epic Games lays off more than 1,000 people",u:"https://www.pcgamer.com/gaming-industry/news/",d:"CEO Tim Sweeney commented on the cuts.",w:"PC Gamer"},
-{t:"Amazon keeps scaling back its games push",u:"https://www.pcgamer.com/au/gaming-industry/news/page/7",d:"It ended a publishing deal for a new racing game.",w:"PC Gamer"},
-{t:"Ubisoft orders full return to office, more studio closures coming",u:"https://www.pcgamer.com/gaming-industry/page/7/",d:"Ubisoft confirmed further closures.",w:"PC Gamer"},
-{t:"Double Fine files to unionize",u:"https://www.pcgamer.com/au/gaming-industry/news/",d:"The Psychonauts and Keeper studio filed with the NLRB.",w:"PC Gamer"},
-{t:"Xbox restructuring: about 3,200 jobs to be cut",u:"https://www.kuow.org/stories/what-xbox-s-layoffs-massive-reboot-says-about-the-gaming-industry",d:"Microsoft called it the biggest restructuring in Xbox history (July 2026).",w:"KUOW"},
-{t:"Nintendo Direct: new 2D Metroid, Mario Kart World update, big Kirby reveal",u:"https://www.techradar.com/nz/news/gaming/consoles",d:"Everything announced in the November 9 Direct.",w:"TechRadar"},
-{t:"Fable gets a quest gameplay trailer",u:"https://simulationdaily.com/news/today-in-gaming-news-november-12-2026/",d:"New footage shown November 12.",w:"Simulation Daily"},
-{t:"Wuthering Waves version 4.0 release date announced",u:"https://simulationdaily.com/news/today-in-gaming-news-november-19-2026/",d:"Plus Gently Packed launches in Early Access.",w:"Simulation Daily"},
-{t:"Temtem: Swarm gets Switch date with cross-platform support",u:"https://simulationdaily.com/news/today-in-gaming-news-november-20-2026/",d:"Also in the November 20 roundup: Goodbye Seoul.",w:"Simulation Daily"},
-{t:"Cities: Skylines II Park Adventures: $19.99, free to try on Steam Nov 12–16",u:"https://simulationdaily.com/news/today-in-gaming-news-november-11-2026/",d:"Included in Expansion Pass II.",w:"Simulation Daily"},
-{t:"Warhammer 40,000: Dark Heresy launches January 28, 2027",u:"https://simulationdaily.com/news/today-in-gaming-news-november-9-2026/",d:"Announced by Owlcat Games.",w:"Simulation Daily"},
-{t:"PlayStation Plus is losing 11 games in November",u:"https://comicbook.com/gaming/news/playstation-ps-plus-games-november-2026-leaving/",d:"Leaving the subscription this month.",w:"ComicBook.com"}
-];
-function esc(s){var e=document.createElement("div");e.textContent=s==null?"":String(s);return e.innerHTML}
-function safe(u){return /^https?:\/\//i.test(u)?u:"#"}
-function dealHTML(x){return '<a class="deal'+(x.hot?' hot':'')+'" href="'+esc(safe(x.u))+'" target="_blank" rel="noopener">'+(x.b?'<span class="b">'+esc(x.b)+'</span>':'')+'<strong>'+esc(x.t)+'</strong><span>'+esc(x.d)+'</span></a>'}
-function newsHTML(x,id){return '<a class="news" href="'+esc(safe(x.u))+'" target="_blank" rel="noopener"><small>'+esc(x.w||"gampluse")+'</small><h3>'+esc(x.t)+'</h3><p>'+esc(x.d)+'</p>'+(id?'<button class="x" data-del="'+esc(id)+'">remove</button>':'')+'</a>'}
-document.getElementById("dealGrid").innerHTML=DEALS.map(dealHTML).join("");
-
-function show(items){document.getElementById("newsList").innerHTML=items.map(function(x){return newsHTML(x)}).join("")}
-fetch("news.json",{cache:"no-store"}).then(function(r){return r.json()}).then(function(j){
-  if(j.items&&j.items.length){show(j.items);if(j.updated)document.getElementById("stamp").textContent="News refreshes automatically every day at 9:00 AM IST. Last refreshed: "+j.updated+"."}
-  else show(SEED)
-}).catch(function(){show(SEED)});
+var $=function(i){return document.getElementById(i)},PL=["PC","PlayStation","Xbox","Nintendo","Mobile"],news=[],flt="All";
+function esc(s){var d=document.createElement("div");d.textContent=s==null?"":String(s);return d.innerHTML}
+function ok(u){return /^https:\/\//i.test(u||"")}
+function im(u){return ok(u)?'<img src="'+esc(u)+'" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">':""}
+function money(c,cur){try{return new Intl.NumberFormat("en-US",{style:"currency",currency:cur||"USD"}).format(c/100)}catch(e){return(c/100).toFixed(2)}}
+function get(u){return fetch(u,{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()})}
+function story(x,big){return '<a class="card'+(big?' feat':'')+'" href="'+esc(ok(x.u)?x.u:"#")+'" target="_blank" rel="noopener">'+im(x.i)+'<div class="in"><div class="src">'+esc(x.w)+'</div><h3>'+esc(x.t)+'</h3><div class="meta">'+esc(x.d)+'</div>'+(x.p||[]).map(function(p){return'<span class="tag">'+esc(p)+'</span>'}).join("")+'</div></a>'}
+function draw(){
+  var f=news.filter(function(x){return ok(x.i)})[0]||news[0];
+  $("feat").innerHTML=f?story(f,1):'<div class="empty">News loads after the first 9:00 AM refresh.</div>';
+  var rest=news.filter(function(x){return x!==f&&(flt==="All"||(x.p||[]).indexOf(flt)>-1)}).slice(0,12);
+  $("list").innerHTML=rest.length?rest.map(function(x){return story(x)}).join(""):'<div class="empty">No stories for this filter right now.</div>';
+  $("chips").innerHTML=["All"].concat(PL).map(function(p){return'<button class="chip'+(p===flt?' on':'')+'" data-f="'+p+'">'+p+'</button>'}).join("");
+  $("plat").innerHTML=PL.map(function(p){var n=news.filter(function(x){return(x.p||[]).indexOf(p)>-1}).length;return'<button data-f="'+p+'"><strong>'+p+'</strong><span>'+n+' recent stor'+(n===1?'y':'ies')+'</span></button>'}).join("");
+}
+document.addEventListener("click",function(e){var b=e.target.closest("[data-f]");if(b){flt=b.getAttribute("data-f");draw();$("latest").scrollIntoView()}});
+function dealCard(x,store,free){var p=free?'<s>'+(x.orig?money(x.orig,x.cur):'')+'</s><em>FREE</em>':(x.off?'<s>'+money(x.orig,x.cur)+'</s>':'')+money(x.price,x.cur);return'<a class="card rel" href="'+esc(ok(x.u)?x.u:"#")+'" target="_blank" rel="noopener">'+(free?'<span class="badge">FREE</span>':x.off?'<span class="badge">-'+esc(x.off)+'%</span>':'')+im(x.img)+'<div class="in"><div class="src">'+store+'</div><h3>'+esc(x.t)+'</h3><div class="price">'+p+'</div></div></a>'}
+get("news.json").then(function(j){news=j.items||[];if(j.updated)$("stamp").textContent="Refreshed daily at 9:00 AM IST. Last refreshed: "+j.updated+".";draw()}).catch(function(){draw()});
+get("deals.json").then(function(j){
+  var h=(j.epicFree||[]).map(function(x){return dealCard(x,"Epic Games Store",1)}).join("")+(j.steam||[]).map(function(x){return dealCard(x,"Steam")}).join("");
+  $("deal").innerHTML=h||'<div class="empty">Live prices appear after the next refresh. Use the store links above.</div>';
+  if(j.updated)$("dstamp").textContent="Prices in USD from the store, as of "+j.updated+". Check the store for your region.";
+  $("trend").innerHTML=(j.trending||[]).map(function(x){return dealCard(x,"Steam")}).join("")||'<div class="empty">Trending list appears after the next refresh.</div>';
+}).catch(function(){$("deal").innerHTML='<div class="empty">Live prices appear after the next refresh. Use the store links above.</div>';$("trend").innerHTML='<div class="empty">Trending list appears after the next refresh.</div>'});
+function poll(){var v=null;try{v=localStorage.getItem("gp_vote")}catch(e){}
+  $("poll").innerHTML=PL.map(function(p){return'<button data-v="'+p+'" class="'+(p===v?'on':'')+'">'+p+(p===v?' ✓ your vote':'')+'</button>'}).join("")}
+document.addEventListener("click",function(e){var b=e.target.closest("[data-v]");if(b){try{localStorage.setItem("gp_vote",b.getAttribute("data-v"))}catch(x){}poll()}});
+poll();
 </script>
 </body>
 </html>
