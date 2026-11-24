@@ -10,7 +10,7 @@
 :root{--bg:#101322;--card:#191D30;--pu:#8B5CF6;--cy:#22D3EE;--ink:#eef0fb;--mut:#9aa1c4;--ln:rgba(139,92,246,.35)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{margin:0;color:var(--ink);font:16px/1.55 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;background:var(--bg) radial-gradient(60% 40% at 85% 0,rgba(139,92,246,.28),transparent),radial-gradient(50% 35% at 0 25%,rgba(34,211,238,.14),transparent) fixed}
+body{margin:0;color:var(--ink);font:16px/1.55 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;background-color:#101322;background-image:radial-gradient(60% 40% at 85% 0,rgba(139,92,246,.28),transparent),radial-gradient(50% 35% at 0 25%,rgba(34,211,238,.14),transparent);background-attachment:fixed}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(rgba(139,92,246,.05) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,rgba(34,211,238,.04) 1px,transparent 1px) 0 0/40px 40px}
 a{color:inherit;text-decoration:none}
 .w{max-width:1040px;margin:0 auto;padding:0 16px;position:relative}
@@ -95,7 +95,7 @@ footer a{color:var(--cy)}
 <footer><div class="w"><div class="cols">
 <div id="about"><h4>About</h4>GAMPLUSE collects gaming headlines and store deals in one place and refreshes them every morning. It's an independent project.</div>
 <div id="contact"><h4>Contact</h4>Feedback or ideas? <a href="https://github.com/eagleslient629-ai/Gamepluse/issues" target="_blank" rel="noopener">Open an issue on GitHub</a>.</div>
-<div id="sources"><h4>Sources</h4>News: IGN, PC Gamer, GamesRadar+, Eurogamer, Gematsu. Deals: Steam and Epic Games Store public store data. Every card links to its original page.</div>
+<div id="sources"><h4>Sources</h4>News: IGN, PC Gamer, GamesRadar+, Eurogamer, Gematsu, Push Square, Pure Xbox, Nintendo Life, Pocket Gamer. Deals: Steam and Epic Games Store public store data. Every card links to its original page.</div>
 <div id="privacy"><h4>Privacy</h4>No accounts, no tracking and no cookies from us. The poll vote stays in your browser.</div>
 </div><p>© GAMPLUSE · Mission: next news</p></div></footer>
 <script>
@@ -116,7 +116,7 @@ function draw(){
 }
 document.addEventListener("click",function(e){var b=e.target.closest("[data-f]");if(b){flt=b.getAttribute("data-f");draw();$("latest").scrollIntoView()}});
 function dealCard(x,store,free){var p=free?'<s>'+(x.orig?money(x.orig,x.cur):'')+'</s><em>FREE</em>':(x.off?'<s>'+money(x.orig,x.cur)+'</s>':'')+money(x.price,x.cur);return'<a class="card rel" href="'+esc(ok(x.u)?x.u:"#")+'" target="_blank" rel="noopener">'+(free?'<span class="badge">FREE</span>':x.off?'<span class="badge">-'+esc(x.off)+'%</span>':'')+im(x.img)+'<div class="in"><div class="src">'+store+'</div><h3>'+esc(x.t)+'</h3><div class="price">'+p+'</div></div></a>'}
-get("news.json").then(function(j){news=j.items||[];if(j.updated)$("stamp").textContent="Refreshed daily at 9:00 AM IST. Last refreshed: "+j.updated+".";draw()}).catch(function(){draw()});
+get("news.json").then(function(j){news=(j.items||[]).map(function(x){if(!x.p){x.p=[];var t=x.t||"";[["PlayStation",/playstation|\bps[345]\b|ps plus/i],["Xbox",/xbox|game pass/i],["Nintendo",/nintendo|\bswitch\b|zelda|mario|pok[eé]mon|kirby|metroid/i],["Mobile",/\bmobile\b|\bios\b|android|iphone/i],["PC",/\bpc\b|steam|epic games|nvidia|geforce|\bamd\b|windows|\bgog\b/i]].forEach(function(r){if(r[1].test(t))x.p.push(r[0])})}return x});if(j.updated)$("stamp").textContent="Refreshed daily at 9:00 AM IST. Last refreshed: "+j.updated+".";draw()}).catch(function(){draw()});
 get("deals.json").then(function(j){
   var h=(j.epicFree||[]).map(function(x){return dealCard(x,"Epic Games Store",1)}).join("")+(j.steam||[]).map(function(x){return dealCard(x,"Steam")}).join("");
   $("deal").innerHTML=h||'<div class="empty">Live prices appear after the next refresh. Use the store links above.</div>';
