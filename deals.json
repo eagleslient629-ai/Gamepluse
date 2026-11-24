@@ -10,15 +10,6 @@
    "cur": "USD"
   },
   {
-   "t": "FINAL FANTASY VII REBIRTH",
-   "u": "https://store.steampowered.com/app/2909400",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2909400/64a1006a85342c7d3e4b1e1b8e562fee2dc86578/header.jpg?t=1793774936",
-   "orig": 4999,
-   "price": 749,
-   "off": 85,
-   "cur": "USD"
-  },
-  {
    "t": "Red Dead Redemption 2",
    "u": "https://store.steampowered.com/app/1174180",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg?t=1759502961",
@@ -89,15 +80,24 @@
    "price": 5599,
    "off": 20,
    "cur": "USD"
+  },
+  {
+   "t": "PC Store Together",
+   "u": "https://store.steampowered.com/app/4990940",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4990940/ed4ad9ac6b819d4ea1a94ea3cbfdc919713ab0da/header.jpg?t=1795536484",
+   "orig": 1299,
+   "price": 1104,
+   "off": 15,
+   "cur": "USD"
   }
  ],
  "trending": [
   {
-   "t": "Steam Machine",
-   "u": "https://store.steampowered.com/app/4165910",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165910/6e3f2fedcd1e7faa80fe3b5c349a62a73dde5d10/header.jpg?t=1794365408",
-   "orig": 104900,
-   "price": 104900,
+   "t": "Dead by Daylight: Terrifier",
+   "u": "https://store.steampowered.com/app/5510420",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5510420/05a33b4c294b9f183c6962898950b97fb460beb7/header.jpg?t=1795539450",
+   "orig": 799,
+   "price": 799,
    "off": 0,
    "cur": "USD"
   },
@@ -111,20 +111,11 @@
    "cur": "USD"
   },
   {
-   "t": "Steam Deck",
-   "u": "https://store.steampowered.com/app/1675200",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1675200/4c51ecfd17183d45c466ad78f5fdb92920e6224d/header.jpg?t=1781214136",
-   "orig": 39900,
-   "price": 39900,
-   "off": 0,
-   "cur": "USD"
-  },
-  {
-   "t": "Steam Deck",
-   "u": "https://store.steampowered.com/app/1675200",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1675200/4c51ecfd17183d45c466ad78f5fdb92920e6224d/header.jpg?t=1781214136",
-   "orig": 39900,
-   "price": 39900,
+   "t": "Steam Machine",
+   "u": "https://store.steampowered.com/app/4165910",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165910/6e3f2fedcd1e7faa80fe3b5c349a62a73dde5d10/header.jpg?t=1794365408",
+   "orig": 104900,
+   "price": 104900,
    "off": 0,
    "cur": "USD"
   },
@@ -143,6 +134,24 @@
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165890/866449b5fb3696b4c869e954c1e98d1e19df0721/header.jpg?t=1793923703",
    "orig": 105900,
    "price": 105900,
+   "off": 0,
+   "cur": "USD"
+  },
+  {
+   "t": "Steam Deck",
+   "u": "https://store.steampowered.com/app/1675200",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1675200/4c51ecfd17183d45c466ad78f5fdb92920e6224d/header.jpg?t=1781214136",
+   "orig": 39900,
+   "price": 39900,
+   "off": 0,
+   "cur": "USD"
+  },
+  {
+   "t": "Steam Deck",
+   "u": "https://store.steampowered.com/app/1675200",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1675200/4c51ecfd17183d45c466ad78f5fdb92920e6224d/header.jpg?t=1781214136",
+   "orig": 39900,
+   "price": 39900,
    "off": 0,
    "cur": "USD"
   },
@@ -153,15 +162,6 @@
    "orig": 9900,
    "price": 9900,
    "off": 0,
-   "cur": "USD"
-  },
-  {
-   "t": "007 First Light",
-   "u": "https://store.steampowered.com/app/3768760",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3768760/be65391533f072e79699be70ef2d47b7b2ac57ee/header_alt_assets_5.jpg?t=1795019577",
-   "orig": 6999,
-   "price": 3499,
-   "off": 50,
    "cur": "USD"
   }
  ],
@@ -174,5 +174,5 @@
    "cur": "USD"
   }
  ],
- "updated": "Nov 24, 2026 10:04 PM IST"
+ "updated": "Nov 25, 2026 12:57 AM IST"
 }
