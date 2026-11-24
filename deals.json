@@ -1,0 +1,178 @@
+{
+ "steam": [
+  {
+   "t": "Detroit: Become Human",
+   "u": "https://store.steampowered.com/app/1222140",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222140/header.jpg?t=1667468479",
+   "orig": 3999,
+   "price": 399,
+   "off": 90,
+   "cur": "USD"
+  },
+  {
+   "t": "FINAL FANTASY VII REBIRTH",
+   "u": "https://store.steampowered.com/app/2909400",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2909400/64a1006a85342c7d3e4b1e1b8e562fee2dc86578/header.jpg?t=1793774936",
+   "orig": 4999,
+   "price": 749,
+   "off": 85,
+   "cur": "USD"
+  },
+  {
+   "t": "Red Dead Redemption 2",
+   "u": "https://store.steampowered.com/app/1174180",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg?t=1759502961",
+   "orig": 5999,
+   "price": 1499,
+   "off": 75,
+   "cur": "USD"
+  },
+  {
+   "t": "Grand Theft Auto V Enhanced",
+   "u": "https://store.steampowered.com/app/3240220",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3240220/header.jpg?t=1781187782",
+   "orig": 4499,
+   "price": 1979,
+   "off": 56,
+   "cur": "USD"
+  },
+  {
+   "t": "007 First Light",
+   "u": "https://store.steampowered.com/app/3768760",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3768760/be65391533f072e79699be70ef2d47b7b2ac57ee/header_alt_assets_5.jpg?t=1795019577",
+   "orig": 6999,
+   "price": 3499,
+   "off": 50,
+   "cur": "USD"
+  },
+  {
+   "t": "Ghost of Tsushima DIRECTOR'S CUT",
+   "u": "https://store.steampowered.com/app/2215430",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215430/header.jpg?t=1763409398",
+   "orig": 5999,
+   "price": 2999,
+   "off": 50,
+   "cur": "USD"
+  },
+  {
+   "t": "Split Fiction",
+   "u": "https://store.steampowered.com/app/2001120",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2001120/header.jpg?t=1763484567",
+   "orig": 4999,
+   "price": 2999,
+   "off": 40,
+   "cur": "USD"
+  },
+  {
+   "t": "Baldur's Gate 3",
+   "u": "https://store.steampowered.com/app/1086940",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/48a2fcbda8565bb45025e98fd8ebde8a7203f6a0/header.jpg?t=1777363040",
+   "orig": 5999,
+   "price": 4199,
+   "off": 30,
+   "cur": "USD"
+  },
+  {
+   "t": "The Blood of Dawnwalker",
+   "u": "https://store.steampowered.com/app/3751260",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751260/0f02fbee77e36562f7ecbd0dac1382bb013ccd89/header_alt_assets_1.jpg?t=1795190297",
+   "orig": 6999,
+   "price": 5599,
+   "off": 20,
+   "cur": "USD"
+  },
+  {
+   "t": "Crimson Desert Enhanced",
+   "u": "https://store.steampowered.com/app/3321460",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3321460/236f3814be7a97d86831800691b6096d449222a8/header.jpg?t=1794478066",
+   "orig": 6999,
+   "price": 5599,
+   "off": 20,
+   "cur": "USD"
+  }
+ ],
+ "trending": [
+  {
+   "t": "Steam Machine",
+   "u": "https://store.steampowered.com/app/4165910",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165910/6e3f2fedcd1e7faa80fe3b5c349a62a73dde5d10/header.jpg?t=1794365408",
+   "orig": 104900,
+   "price": 104900,
+   "off": 0,
+   "cur": "USD"
+  },
+  {
+   "t": "Steam Machine",
+   "u": "https://store.steampowered.com/app/4165910",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165910/6e3f2fedcd1e7faa80fe3b5c349a62a73dde5d10/header.jpg?t=1794365408",
+   "orig": 104900,
+   "price": 104900,
+   "off": 0,
+   "cur": "USD"
+  },
+  {
+   "t": "Steam Frame",
+   "u": "https://store.steampowered.com/app/4165890",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165890/866449b5fb3696b4c869e954c1e98d1e19df0721/header.jpg?t=1793923703",
+   "orig": 105900,
+   "price": 105900,
+   "off": 0,
+   "cur": "USD"
+  },
+  {
+   "t": "Steam Frame",
+   "u": "https://store.steampowered.com/app/4165890",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165890/866449b5fb3696b4c869e954c1e98d1e19df0721/header.jpg?t=1793923703",
+   "orig": 105900,
+   "price": 105900,
+   "off": 0,
+   "cur": "USD"
+  },
+  {
+   "t": "007 First Light",
+   "u": "https://store.steampowered.com/app/3768760",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3768760/be65391533f072e79699be70ef2d47b7b2ac57ee/header_alt_assets_5.jpg?t=1795019577",
+   "orig": 6999,
+   "price": 3499,
+   "off": 50,
+   "cur": "USD"
+  },
+  {
+   "t": "Steam Deck",
+   "u": "https://store.steampowered.com/app/1675200",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1675200/4c51ecfd17183d45c466ad78f5fdb92920e6224d/header.jpg?t=1781214136",
+   "orig": 39900,
+   "price": 39900,
+   "off": 0,
+   "cur": "USD"
+  },
+  {
+   "t": "Steam Deck",
+   "u": "https://store.steampowered.com/app/1675200",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1675200/4c51ecfd17183d45c466ad78f5fdb92920e6224d/header.jpg?t=1781214136",
+   "orig": 39900,
+   "price": 39900,
+   "off": 0,
+   "cur": "USD"
+  },
+  {
+   "t": "Call of Duty®: Modern Warfare® 4",
+   "u": "https://store.steampowered.com/app/4435490",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4435490/0c492be3204835d71e8b454b6eb1817f8ff68c0d/header.jpg?t=1794873974",
+   "orig": 6999,
+   "price": 5949,
+   "off": 15,
+   "cur": "USD"
+  }
+ ],
+ "epicFree": [
+  {
+   "t": "Mark of the Deep",
+   "u": "https://store.epicgames.com/en-US/p/mark-of-the-deep-f7dc08",
+   "img": "https://cdn1.epicgames.com/spt-assets/83a240506a884c10ad8fb99694e57a0d/mark-of-the-deep-w1ygr.png",
+   "orig": 1999,
+   "cur": "USD"
+  }
+ ],
+ "updated": "Nov 24, 2026 10:03 AM IST"
+}
