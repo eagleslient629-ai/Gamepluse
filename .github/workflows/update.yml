@@ -1,7 +1,7 @@
 name: Refresh news
 on:
   schedule:
-    - cron: "30 3 * * *"   # 03:30 UTC = 9:00 AM IST
+    - cron: "30 18 * * *"   # 18:30 UTC = 12:00 AM IST
   workflow_dispatch:
 permissions:
   contents: write
