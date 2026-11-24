@@ -1,4 +1,5 @@
 import json, re, urllib.request, xml.etree.ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor
 from email.utils import parsedate_to_datetime
 from datetime import datetime, timezone, timedelta
 
@@ -54,6 +55,18 @@ def image_of(e):
             m = re.search(r'<img[^>]+src=["\'](https://[^"\']+)', c.text)
             if m:
                 return m.group(1)
+    return ""
+
+def og_image(url):
+    try:
+        html = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=8).read(200000).decode("utf-8", "ignore")
+        for p in (r'<meta[^>]+property=["\']og:image["\'][^>]*content=["\']([^"\']+)',
+                  r'<meta[^>]+content=["\']([^"\']+)["\'][^>]*property=["\']og:image["\']'):
+            m = re.search(p, html, re.I)
+            if m and m.group(1).startswith("https://"):
+                return m.group(1).replace("&amp;", "&")
+    except Exception:
+        pass
     return ""
 
 def load_news():
@@ -117,6 +130,11 @@ def epic():
 now = datetime.now(IST).strftime("%b %d, %Y %I:%M %p IST")
 
 items = load_news()
+need = [it for it in items[:40] if not it["i"]]
+with ThreadPoolExecutor(8) as ex:
+    for it, img in zip(need, ex.map(lambda i: og_image(i["u"]), need)):
+        it["i"] = img
+print("images added", sum(1 for it in need if it["i"]), "of", len(need))
 if items:
     json.dump({"updated": now, "items": items}, open("news.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("news", len(items))
