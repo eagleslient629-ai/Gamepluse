@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GAMPLUSE – Level up your gaming world</title>
-<meta name="description" content="Gaming news and real game deals, refreshed every morning. Mission: next news.">
+<meta name="description" content="Gaming news and real game deals, refreshed every day at 12:00 AM IST. Mission: next news.">
 <meta name="theme-color" content="#101322">
 <style>
 :root{--bg:#101322;--card:#191D30;--pu:#8B5CF6;--cy:#22D3EE;--ink:#eef0fb;--mut:#9aa1c4;--ln:rgba(139,92,246,.35)}
@@ -79,7 +79,7 @@ footer a{color:var(--cy)}
 <section class="hero"><div>
 <div class="eyebrow">Mission: next news</div>
 <h1>Level up your gaming world.</h1>
-<p>Fresh gaming news and real store deals, updated automatically every morning at 9:00 AM IST.</p>
+<p>Fresh gaming news and real store deals, updated automatically every day at 12:00 AM IST.</p>
 <a class="btn p" href="#latest">Latest news</a><a class="btn s" href="#deals">Today's deals</a></div>
 <div class="art"><svg viewBox="0 0 320 200" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><g fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M80 50h160c30 0 50 30 58 80 4 28-10 44-30 36-14-5-24-20-36-30H88c-12 10-22 25-36 30-20 8-34-8-30-36 8-50 28-80 58-80z"/><path d="M92 90v36M74 108h36"/><circle cx="224" cy="96" r="8"/><circle cx="248" cy="112" r="8"/><circle cx="200" cy="112" r="8"/><circle cx="224" cy="128" r="8"/></g></svg></div></section>
 
@@ -95,7 +95,7 @@ footer a{color:var(--cy)}
 <div class="poll"><strong>Which platform do you play on most?</strong><div id="poll"></div><p class="meta">Your vote is saved on this device only. Shared results need a backend, which gampluse doesn't have yet.</p></div>
 </main>
 <footer><div class="w"><div class="cols">
-<div id="about"><h4>About</h4>GAMPLUSE collects gaming headlines and store deals in one place and refreshes them every morning. It's an independent project.</div>
+<div id="about"><h4>About</h4>GAMPLUSE collects gaming headlines and store deals in one place and refreshes them every day at 12:00 AM IST. It's an independent project.</div>
 <div id="contact"><h4>Contact</h4>Feedback or ideas? <a href="https://github.com/eagleslient629-ai/Gamepluse/issues" target="_blank" rel="noopener">Open an issue on GitHub</a>.</div>
 <div id="sources"><h4>Sources</h4>News: IGN, PC Gamer, GamesRadar+, Eurogamer, Gematsu, Push Square, Pure Xbox, Nintendo Life, Pocket Gamer. Deals: Steam and Epic Games Store public store data. Every card links to its original page.</div>
 <div id="privacy"><h4>Privacy</h4>No accounts, no tracking and no cookies from us. The poll vote stays in your browser.</div>
@@ -110,15 +110,15 @@ function get(u){return fetch(u,{cache:"no-cache"}).then(function(r){if(!r.ok)thr
 function story(x,big){return '<a class="card'+(big?' feat':'')+'" href="'+esc(ok(x.u)?x.u:"#")+'" target="_blank" rel="noopener"><div class="in"><div class="src">'+esc(x.w)+'</div><h3>'+esc(x.t)+'</h3><div class="meta">'+esc(x.d)+'</div>'+(x.p||[]).map(function(p){return'<span class="tag">'+esc(p)+'</span>'}).join("")+'</div></a>'}
 function draw(){
   var f=news.filter(function(x){return ok(x.i)})[0]||news[0];
-  $("feat").innerHTML=f?story(f,1):'<div class="empty">News loads after the first 9:00 AM refresh.</div>';
+  $("feat").innerHTML=f?story(f,1):'<div class="empty">News loads after the first 12:00 AM refresh.</div>';
   var all=news.filter(function(x){return x!==f&&(flt==="All"||(x.p||[]).indexOf(flt)>-1)}),rest=all.slice(0,nShow);
-  $("list").innerHTML=rest.length?rest.map(function(x){return story(x)}).join("")+(all.length>nShow?'<button class="chip" data-more="n">Show more stories</button>':''):'<div class="empty">No stories for this filter right now.</div>';
+  $("list").innerHTML=rest.length?rest.map(function(x){return story(x)}).join("")+(all.length>nShow?'<button class="chip" data-more="n">Show more stories</button>':'') :'<div class="empty">No stories for this filter right now.</div>';
   $("chips").innerHTML=["All"].concat(PL).map(function(p){return'<button class="chip'+(p===flt?' on':'')+'" data-f="'+p+'">'+p+'</button>'}).join("");
   $("plat").innerHTML=PL.map(function(p){var n=news.filter(function(x){return(x.p||[]).indexOf(p)>-1}).length;return'<button data-f="'+p+'"><strong>'+p+'</strong><span>'+n+' recent stor'+(n===1?'y':'ies')+'</span></button>'}).join("");
 }
 document.addEventListener("click",function(e){if(e.target.closest("[data-more]")){nShow+=8;draw();return}var b=e.target.closest("[data-f]");if(b){flt=b.getAttribute("data-f");nShow=8;draw();$("latest").scrollIntoView()}});
 function dealCard(x,store,free){var p=free?'<s>'+(x.orig?money(x.orig,x.cur):'')+'</s><em>FREE</em>':(x.off?'<s>'+money(x.orig,x.cur)+'</s>':'')+money(x.price,x.cur);return'<a class="card rel" href="'+esc(ok(x.u)?x.u:"#")+'" target="_blank" rel="noopener">'+(free?'<span class="badge">FREE</span>':x.off?'<span class="badge">-'+esc(x.off)+'%</span>':'')+im(x.img)+'<div class="in"><div class="src">'+store+'</div><h3>'+esc(x.t)+'</h3><div class="price">'+p+'</div></div></a>'}
-get("news.json").then(function(j){news=(j.items||[]).map(function(x){if(!x.p){x.p=[];var t=x.t||"";[["PlayStation",/playstation|\bps[345]\b|ps plus/i],["Xbox",/xbox|game pass/i],["Nintendo",/nintendo|\bswitch\b|zelda|mario|pok[eé]mon|kirby|metroid/i],["Mobile",/\bmobile\b|\bios\b|android|iphone/i],["PC",/\bpc\b|steam|epic games|nvidia|geforce|\bamd\b|windows|\bgog\b/i]].forEach(function(r){if(r[1].test(t))x.p.push(r[0])})}return x});if(j.updated)$("stamp").textContent="Refreshed daily at 9:00 AM IST. Last refreshed: "+j.updated+".";draw()}).catch(function(){draw()});
+get("news.json").then(function(j){news=(j.items||[]).map(function(x){if(!x.p){x.p=[];var t=x.t||"";[["PlayStation",/playstation|ps[345]|ps plus/i],["Xbox",/xbox|game pass/i],["Nintendo",/nintendo|switch|zelda|mario|pok[eé]mon|kirby|metroid/i],["Mobile",/mobile|ios|android|iphone/i],["PC",/pc|steam|epic games|nvidia|geforce|amd|windows|gog/i]].forEach(function(r){if(r[1].test(t))x.p.push(r[0])})}return x});if(j.updated)$("stamp").textContent="Refreshed daily at 12:00 AM IST. Last refreshed: "+j.updated+".";draw()}).catch(function(){draw()});
 get("deals.json").then(function(j){
   var h=(j.epicFree||[]).map(function(x){return dealCard(x,"Epic Games Store",1)}).join("")+(j.steam||[]).slice(0,8).map(function(x){return dealCard(x,"Steam")}).join("");
   $("deal").innerHTML=h||'<div class="empty">Live prices appear after the next refresh. Use the store links above.</div>';
