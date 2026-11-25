@@ -111,21 +111,21 @@
    "cur": "INR"
   },
   {
-   "t": "Dead by Daylight: Terrifier",
-   "u": "https://store.steampowered.com/app/5510420",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5510420/05a33b4c294b9f183c6962898950b97fb460beb7/header.jpg?t=1795548655",
-   "orig": 46300,
-   "price": 46300,
-   "off": 0,
-   "cur": "INR"
-  },
-  {
    "t": "Red Dead Redemption 2",
    "u": "https://store.steampowered.com/app/1174180",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg?t=1759502961",
    "orig": 499900,
    "price": 124900,
    "off": 75,
+   "cur": "INR"
+  },
+  {
+   "t": "Dead by Daylight: Terrifier",
+   "u": "https://store.steampowered.com/app/5510420",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5510420/05a33b4c294b9f183c6962898950b97fb460beb7/header.jpg?t=1795548655",
+   "orig": 46300,
+   "price": 46300,
+   "off": 0,
    "cur": "INR"
   },
   {
@@ -138,12 +138,30 @@
    "cur": "INR"
   },
   {
+   "t": "Call of Duty®: Modern Warfare® 4",
+   "u": "https://store.steampowered.com/app/4435490",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4435490/0c492be3204835d71e8b454b6eb1817f8ff68c0d/header.jpg?t=1794873974",
+   "orig": 499900,
+   "price": 424900,
+   "off": 15,
+   "cur": "INR"
+  },
+  {
    "t": "007 First Light",
    "u": "https://store.steampowered.com/app/3768760",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3768760/be65391533f072e79699be70ef2d47b7b2ac57ee/header_alt_assets_5.jpg?t=1795019577",
    "orig": 349900,
    "price": 174900,
    "off": 50,
+   "cur": "INR"
+  },
+  {
+   "t": "Warhammer 40,000: Dawn of War IV Commander Edition",
+   "u": "https://store.steampowered.com/app/1624417",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/subs/1624417/29c373e1dcc0ec591418f6c1cfad12626da6bfcb/header_ratio.jpg?t=1786550481",
+   "orig": 629900,
+   "price": 566900,
+   "off": 10,
    "cur": "INR"
   }
  ],
@@ -156,7 +174,7 @@
    "cur": "INR"
   }
  ],
- "updated": "Nov 25, 2026 01:16 PM IST",
+ "updated": "Nov 25, 2026 07:06 PM IST",
  "indies": [
   {
    "t": "Slay the Spire 2",
@@ -177,6 +195,15 @@
    "cur": "INR"
   },
   {
+   "t": "Hades II",
+   "u": "https://store.steampowered.com/app/1145350",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145350/91ac334a2c137d08968ccc0bc474a02579602100/header.jpg?t=1779901265",
+   "orig": 130000,
+   "price": 91000,
+   "off": 30,
+   "cur": "INR"
+  },
+  {
    "t": "Risk of Rain 2",
    "u": "https://store.steampowered.com/app/632360",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/632360/header.jpg?t=1791475448",
@@ -186,12 +213,12 @@
    "cur": "INR"
   },
   {
-   "t": "Hades II",
-   "u": "https://store.steampowered.com/app/1145350",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145350/91ac334a2c137d08968ccc0bc474a02579602100/header.jpg?t=1779901265",
-   "orig": 130000,
-   "price": 91000,
-   "off": 30,
+   "t": "Hades",
+   "u": "https://store.steampowered.com/app/1145360",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145360/header.jpg?t=1758127023",
+   "orig": 110000,
+   "price": 27500,
+   "off": 75,
    "cur": "INR"
   },
   {
@@ -206,19 +233,10 @@
   {
    "t": "The Escapists 2",
    "u": "https://store.steampowered.com/app/641990",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/641990/header.jpg?t=1791478007",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/641990/header.jpg?t=1795604869",
    "orig": 149900,
    "price": 14900,
    "off": 90,
-   "cur": "INR"
-  },
-  {
-   "t": "Hades",
-   "u": "https://store.steampowered.com/app/1145360",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145360/header.jpg?t=1758127023",
-   "orig": 110000,
-   "price": 27500,
-   "off": 75,
    "cur": "INR"
   },
   {
