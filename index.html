@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GAMPLUSE – Level up your gaming world</title>
-<meta name="description" content="Gaming news and real game deals, refreshed every day at 12:00 AM IST. Mission: next news.">
+<meta name="description" content="Gaming news, indie spotlights, and real Indian Rupee (₹) store deals, refreshed every day at 12:00 AM IST. Mission: next news.">
 <meta name="theme-color" content="#101322">
 <style>
 :root{--bg:#101322;--card:#191D30;--pu:#8B5CF6;--cy:#22D3EE;--ink:#eef0fb;--mut:#9aa1c4;--ln:rgba(139,92,246,.35)}
@@ -51,12 +51,13 @@ a.card:hover{border-color:var(--cy);box-shadow:0 0 18px rgba(34,211,238,.25);tra
 .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none;flex:1}
 .chip{flex:none;padding:7px 16px;border-radius:99px;border:1px solid var(--ln);background:transparent;color:var(--mut);font:inherit;font-size:.82rem;cursor:pointer}
 .chip.on{background:var(--pu);color:#fff;border-color:var(--pu);box-shadow:0 0 14px rgba(139,92,246,.6)}
-.plat{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.plat{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
 .plat button{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:18px 10px;color:var(--ink);font:inherit;cursor:pointer;text-align:center}
 .plat button:hover{border-color:var(--cy);box-shadow:0 0 16px rgba(34,211,238,.25)}
 .plat strong{display:block;letter-spacing:.1em;text-transform:uppercase}
 .plat span{color:var(--mut);font-size:.8rem}
 .badge{position:absolute;top:8px;left:8px;background:var(--cy);color:#04121a;font-weight:800;font-size:.75rem;padding:2px 9px;border-radius:6px}
+.badge.indie{background:var(--pu);color:#fff;left:auto;right:8px}
 .rel{position:relative}
 .price{margin-top:6px;font-weight:700}
 .price s{color:var(--mut);font-weight:400;margin-right:6px}
@@ -77,12 +78,12 @@ footer a{color:var(--cy)}
 </head>
 <body>
 <header><div class="w hd"><a class="logo" href="#top">GAM<b>PLUSE</b></a>
-<nav><a href="#latest">News</a><a href="#platforms">Platforms</a><a href="#deals">Deals</a><a href="#trending">Trending</a><a href="#community">Community</a></nav></div></header>
+<nav><a href="#latest">News</a><a href="#platforms">Platforms</a><a href="#deals">Deals</a><a href="#indies">Indies</a><a href="#trending">Trending</a><a href="#community">Community</a></nav></div></header>
 <main class="w" id="top">
 <section class="hero"><div>
 <div class="eyebrow">Mission: next news</div>
 <h1>Level up your gaming world.</h1>
-<p>Fresh gaming news and real store deals, updated automatically every day at 12:00 AM IST.</p>
+<p>Fresh gaming news, indie gems, and real store deals in ₹ INR, updated automatically every day at 12:00 AM IST.</p>
 <a class="btn p" href="#latest">Latest news</a><a class="btn s" href="#deals">Today's deals</a></div>
 <div class="art"><svg viewBox="0 0 320 200" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><g fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M80 50h160c30 0 50 30 58 80 4 28-10 44-30 36-14-5-24-20-36-30H88c-12 10-22 25-36 30-20 8-34-8-30-36 8-50 28-80 58-80z"/><path d="M92 90v36M74 108h36"/><circle cx="224" cy="96" r="8"/><circle cx="248" cy="112" r="8"/><circle cx="200" cy="112" r="8"/><circle cx="224" cy="128" r="8"/></g></svg></div></section>
 
@@ -93,26 +94,32 @@ footer a{color:var(--cy)}
   <input class="search" id="q" type="search" placeholder="Search headlines or outlets..." aria-label="Search news">
 </div>
 <div class="grid" id="list"></div>
-<h2 id="platforms">Platforms</h2><div class="plat" id="plat"></div>
+<h2 id="platforms">Platforms &amp; Categories</h2><div class="plat" id="plat"></div>
 <h2 id="deals">Today's game deals</h2>
-<div class="links"><a href="https://store.steampowered.com/specials" target="_blank" rel="noopener">Steam specials</a><a href="https://store.epicgames.com/en-US/free-games" target="_blank" rel="noopener">Epic free games</a><a href="https://isthereanydeal.com/deals/" target="_blank" rel="noopener">IsThereAnyDeal</a><a href="https://gg.deals/deals/" target="_blank" rel="noopener">GG.deals</a></div>
+<div class="links"><a href="https://store.steampowered.com/specials" target="_blank" rel="noopener">Steam specials</a><a href="https://store.epicgames.com/en-US/free-games" target="_blank" rel="noopener">Epic free games</a><a href="https://itch.io/games/on-sale" target="_blank" rel="noopener">itch.io sales</a><a href="https://isthereanydeal.com/deals/" target="_blank" rel="noopener">IsThereAnyDeal</a></div>
 <p class="sub" id="dstamp"></p><div class="grid" id="deal"></div>
-<h2 id="trending">Trending games</h2><p class="sub">Top sellers on Steam right now.</p><div class="grid" id="trend"></div>
+<h2 id="indies">Indie &amp; small studio deals</h2><p class="sub">Hidden gems and independent games on discount right now.</p><div class="grid" id="indieGrid"></div>
+<h2 id="trending">Trending games</h2><p class="sub">Top sellers on Steam India right now.</p><div class="grid" id="trend"></div>
 <h2 id="community">Community poll</h2>
 <div class="poll"><strong>Which platform do you play on most?</strong><div id="poll"></div><p class="meta" id="pollNote">Your vote is saved on this device only.</p></div>
 </main>
 <footer><div class="w"><div class="cols">
-<div id="about"><h4>About</h4>GAMPLUSE collects gaming headlines and store deals in one place and refreshes them every day at 12:00 AM IST. It's an independent project.</div>
+<div id="about"><h4>About</h4>GAMPLUSE collects gaming headlines, indie spotlights, and Indian Rupee (₹) store deals in one place and refreshes them every day at 12:00 AM IST. It's an independent project.</div>
 <div id="contact"><h4>Contact</h4>Feedback or ideas? <a href="https://github.com/eagleslient629-ai/Gamepluse/issues" target="_blank" rel="noopener">Open an issue on GitHub</a>.</div>
-<div id="sources"><h4>Sources</h4>News: IGN, PC Gamer, GamesRadar+, Eurogamer, Gematsu, Push Square, Pure Xbox, Nintendo Life, Pocket Gamer. Deals: Steam and Epic Games Store public store data. Every card links to its original page.</div>
+<div id="sources"><h4>Sources</h4>News: IGN, PC Gamer, GamesRadar+, Eurogamer, Gematsu, Push Square, Pure Xbox, Nintendo Life, Pocket Gamer, IndieGamesPlus, Rock Paper Shotgun. Deals: Steam India (INR) and Epic Games Store.</div>
 <div id="privacy"><h4>Privacy</h4>No accounts, no tracking and no cookies from us. The poll vote stays in your browser.</div>
 </div><p>© GAMPLUSE · Mission: next news</p></div></footer>
 <script>
-var $=function(i){return document.getElementById(i)},PL=["PC","PlayStation","Xbox","Nintendo","Mobile"],news=[],flt="All",query="",nShow=8;
+var $=function(i){return document.getElementById(i)},PL=["PC","PlayStation","Xbox","Nintendo","Mobile","Indie"],news=[],flt="All",query="",nShow=8;
 function esc(s){var d=document.createElement("div");d.textContent=s==null?"":String(s);return d.innerHTML}
 function ok(u){return /^https:\/\//i.test(u||"")}
 function im(u){return ok(u)?'<img src="'+esc(u)+'" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">':""}
-function money(c,cur){try{return new Intl.NumberFormat("en-US",{style:"currency",currency:cur||"USD"}).format(c/100)}catch(e){return(c/100).toFixed(2)}}
+function money(c,cur){
+  var code=cur||"INR";
+  var loc=code==="INR"?"en-IN":"en-US";
+  try{return new Intl.NumberFormat(loc,{style:"currency",currency:code,maximumFractionDigits:code==="INR"?0:2}).format(c/100)}
+  catch(e){return(code==="INR"?"₹":"$")+(c/100).toFixed(0)}
+}
 function get(u){return fetch(u,{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()})}
 function story(x,big){return '<a class="card'+(big?' feat':'')+'" href="'+esc(ok(x.u)?x.u:"#")+'" target="_blank" rel="noopener">'+(big?im(x.i):"")+'<div class="in"><div class="src">'+esc(x.w)+'</div><h3>'+esc(x.t)+'</h3><div class="meta">'+esc(x.d)+'</div>'+(x.p||[]).map(function(p){return'<span class="tag">'+esc(p)+'</span>'}).join("")+'</div></a>'}
 function matches(x){
@@ -132,14 +139,24 @@ function draw(){
 }
 document.addEventListener("click",function(e){if(e.target.closest("[data-more]")){nShow+=8;draw();return}var b=e.target.closest("[data-f]");if(b){flt=b.getAttribute("data-f");nShow=8;draw();$("latest").scrollIntoView()}});
 $("q").addEventListener("input",function(e){query=e.target.value.trim().toLowerCase();nShow=8;draw()});
-function dealCard(x,store,free){var p=free?'<s>'+(x.orig?money(x.orig,x.cur):'')+'</s><em>FREE</em>':(x.off?'<s>'+money(x.orig,x.cur)+'</s>':'')+money(x.price,x.cur);return'<a class="card rel" href="'+esc(ok(x.u)?x.u:"#")+'" target="_blank" rel="noopener">'+(free?'<span class="badge">FREE</span>':x.off?'<span class="badge">-'+esc(x.off)+'%</span>':'')+im(x.img)+'<div class="in"><div class="src">'+store+'</div><h3>'+esc(x.t)+'</h3><div class="price">'+p+'</div></div></a>'}
-get("news.json").then(function(j){news=(j.items||[]).map(function(x){if(!x.p){x.p=[];var t=x.t||"";[["PlayStation",/playstation|\bps[345]\b|ps plus/i],["Xbox",/xbox|game pass/i],["Nintendo",/nintendo|\bswitch\b|zelda|mario|pok[eé]mon|kirby|metroid/i],["Mobile",/\bmobile\b|\bios\b|android|iphone/i],["PC",/\bpc\b|steam|epic games|nvidia|geforce|\bamd\b|windows|\bgog\b/i]].forEach(function(r){if(r[1].test(t))x.p.push(r[0])})}return x});if(j.updated)$("stamp").textContent="Refreshed daily at 12:00 AM IST. Last refreshed: "+j.updated+".";draw()}).catch(function(){draw()});
+function dealCard(x,store,free,tag){
+  var p=free?'<s>'+(x.orig?money(x.orig,x.cur):'')+'</s><em>FREE</em>':(x.off?'<s>'+money(x.orig,x.cur)+'</s>':'')+money(x.price,x.cur);
+  var b1=free?'<span class="badge">FREE</span>':x.off?'<span class="badge">-'+esc(x.off)+'%</span>':'';
+  var b2=tag?'<span class="badge indie">'+esc(tag)+'</span>':'';
+  return'<a class="card rel" href="'+esc(ok(x.u)?x.u:"#")+'" target="_blank" rel="noopener">'+b1+b2+im(x.img)+'<div class="in"><div class="src">'+store+'</div><h3>'+esc(x.t)+'</h3><div class="price">'+p+'</div></div></a>';
+}
+get("news.json").then(function(j){news=(j.items||[]).map(function(x){if(!x.p){x.p=[];var t=x.t||"";[["PlayStation",/playstation|\bps[345]\b|ps plus/i],["Xbox",/xbox|game pass/i],["Nintendo",/nintendo|\bswitch\b|zelda|mario|pok[eé]mon|kirby|metroid/i],["Mobile",/\bmobile\b|\bios\b|android|iphone/i],["PC",/\bpc\b|steam|epic games|nvidia|geforce|\bamd\b|windows|\bgog\b/i],["Indie",/\bindie\b|solo dev|roguelike|pixel art|itch\.io/i]].forEach(function(r){if(r[1].test(t))x.p.push(r[0])})}return x});if(j.updated)$("stamp").textContent="Refreshed daily at 12:00 AM IST. Last refreshed: "+j.updated+".";draw()}).catch(function(){draw()});
 get("deals.json").then(function(j){
   var h=(j.epicFree||[]).map(function(x){return dealCard(x,"Epic Games Store",1)}).join("")+(j.steam||[]).slice(0,8).map(function(x){return dealCard(x,"Steam")}).join("");
   $("deal").innerHTML=h||'<div class="empty">Live prices appear after the next refresh. Use the store links above.</div>';
-  if(j.updated)$("dstamp").textContent="Prices in USD from the store, as of "+j.updated+". Check the store for your region.";
+  if(j.updated)$("dstamp").textContent="Official regional prices in Indian Rupees (₹ INR), as of "+j.updated+".";
+  $("indieGrid").innerHTML=(j.indies||[]).slice(0,8).map(function(x){return dealCard(x,"Steam Indie",0,"INDIE")}).join("")||'<div class="empty">Indie deals load after the next workflow run.</div>';
   $("trend").innerHTML=(j.trending||[]).slice(0,6).map(function(x){return dealCard(x,"Steam")}).join("")||'<div class="empty">Trending list appears after the next refresh.</div>';
-}).catch(function(){$("deal").innerHTML='<div class="empty">Live prices appear after the next refresh. Use the store links above.</div>';$("trend").innerHTML='<div class="empty">Trending list appears after the next refresh.</div>'});
+}).catch(function(){
+  $("deal").innerHTML='<div class="empty">Live prices appear after the next refresh. Use the store links above.</div>';
+  $("indieGrid").innerHTML='<div class="empty">Indie deals load after the next workflow run.</div>';
+  $("trend").innerHTML='<div class="empty">Trending list appears after the next refresh.</div>';
+});
 function loadCounts(){try{return JSON.parse(localStorage.getItem("gp_counts")||"{}")}catch(e){return{}}}
 function poll(){
   var v=null;try{v=localStorage.getItem("gp_vote")}catch(e){}
