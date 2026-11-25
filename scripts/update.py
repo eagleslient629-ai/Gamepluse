@@ -13,16 +13,19 @@ FEEDS = [
     ("Pure Xbox", "https://www.purexbox.com/feeds/latest", "Xbox"),
     ("Nintendo Life", "https://www.nintendolife.com/feeds/latest", "Nintendo"),
     ("Pocket Gamer", "https://www.pocketgamer.com/rss/", "Mobile"),
+    ("IndieGamesPlus", "https://indiegamesplus.com/feed", "Indie"),
+    ("Rock Paper Shotgun", "https://www.rockpapershotgun.com/feed/news", "PC"),
 ]
 PER_FEED = 10
 IST = timezone(timedelta(hours=5, minutes=30))
-UA = {"User-Agent": "Mozilla/5.0 (compatible; gampluse-bot/2.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; gampluse-bot/2.1)"}
 PLAT = [
     ("PlayStation", r"playstation|\bps[345]\b|\bpsn\b|\bps plus\b"),
     ("Xbox", r"xbox|game pass"),
     ("Nintendo", r"nintendo|\bswitch\b|zelda|mario|pok[eé]mon|kirby|metroid"),
     ("Mobile", r"\bmobile\b|\bios\b|android|iphone|\bipad\b"),
-    ("PC", r"\bpc\b|steam|epic games|nvidia|geforce|\bamd\b|windows|\bgog\b"),
+    ("PC", r"\bpc\b|steam|epic games|nvidia|geforce|\bamd\b|windows|\bgog\b|itch\.io"),
+    ("Indie", r"\bindie\b|solo dev|roguelike|pixel art|itch\.io|small studio"),
 ]
 
 def get(url, timeout=25):
@@ -93,23 +96,56 @@ def load_news():
     items.sort(key=lambda x: x["_ts"], reverse=True)
     for i in items:
         del i["_ts"]
-    return items[:60]
+    return items[:70]
 
 def steam():
-    j = json.loads(get("https://store.steampowered.com/api/featuredcategories?cc=us&l=en"))
+    # cc=in fetches official Indian Rupee (INR) regional prices in paise (cents)
+    j = json.loads(get("https://store.steampowered.com/api/featuredcategories?cc=in&l=en"))
     def conv(x):
         i = x.get("id")
         return {"t": x.get("name"), "u": "https://store.steampowered.com/app/%s" % i,
                 "img": x.get("header_image") or "https://cdn.cloudflare.steamstatic.com/steam/apps/%s/header.jpg" % i,
                 "orig": x.get("original_price"), "price": x.get("final_price"),
-                "off": x.get("discount_percent", 0), "cur": x.get("currency", "USD")}
+                "off": x.get("discount_percent", 0), "cur": x.get("currency", "INR")}
     sp = [conv(x) for x in j.get("specials", {}).get("items", []) if x.get("discount_percent", 0) > 0 and x.get("id")]
     sp.sort(key=lambda d: d["off"], reverse=True)
     top = [conv(x) for x in j.get("top_sellers", {}).get("items", []) if x.get("id")]
     return sp[:12], top[:8]
 
+def steam_indies():
+    # Fetch discounted indie games & small studio releases in INR (tag 492 = Indie)
+    url = "https://store.steampowered.com/search/results/?query&start=0&count=18&tags=492&specials=1&cc=in&l=en&json=1"
+    j = json.loads(get(url))
+    out = []
+    for it in j.get("items", []):
+        logo = it.get("logo", "")
+        m = re.search(r"/apps/(\d+)/", logo)
+        if not m:
+            continue
+        appid = m.group(1)
+        try:
+            det = json.loads(get("https://store.steampowered.com/api/appdetails?appids=%s&cc=in&l=en" % appid, timeout=12))
+            data = det.get(appid, {}).get("data") or {}
+            po = data.get("price_overview")
+            if not po:
+                continue
+            out.append({
+                "t": data.get("name") or it.get("name"),
+                "u": "https://store.steampowered.com/app/%s" % appid,
+                "img": data.get("header_image") or "https://cdn.cloudflare.steamstatic.com/steam/apps/%s/header.jpg" % appid,
+                "orig": po.get("initial"),
+                "price": po.get("final"),
+                "off": po.get("discount_percent", 0),
+                "cur": po.get("currency", "INR"),
+            })
+            if len(out) >= 8:
+                break
+        except Exception:
+            continue
+    return out
+
 def epic():
-    j = json.loads(get("https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions?locale=en-US&country=US&allowCountries=US"))
+    j = json.loads(get("https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions?locale=en-US&country=IN&allowCountries=IN"))
     out = []
     for el in j["data"]["Catalog"]["searchStore"]["elements"]:
         promos = (el.get("promotions") or {}).get("promotionalOffers") or []
@@ -124,13 +160,13 @@ def epic():
         img = next((x["url"] for x in imgs if x.get("type") in ("OfferImageWide", "DieselStoreFrontWide")),
                    imgs[0]["url"] if imgs else "")
         out.append({"t": el.get("title"), "u": "https://store.epicgames.com/en-US/p/" + slug, "img": img,
-                    "orig": price.get("originalPrice"), "cur": price.get("currencyCode", "USD")})
+                    "orig": price.get("originalPrice"), "cur": price.get("currencyCode", "INR")})
     return out
 
 now = datetime.now(IST).strftime("%b %d, %Y %I:%M %p IST")
 
 items = load_news()
-need = [it for it in items[:40] if not it["i"]]
+need = [it for it in items[:45] if not it["i"]]
 with ThreadPoolExecutor(8) as ex:
     for it, img in zip(need, ex.map(lambda i: og_image(i["u"]), need)):
         it["i"] = img
@@ -152,6 +188,11 @@ try:
     if top: deals["trending"] = top; changed = True
 except Exception as ex:
     print("steam failed", ex)
+try:
+    ind = steam_indies()
+    if ind: deals["indies"] = ind; changed = True
+except Exception as ex:
+    print("steam indies failed", ex)
 try:
     fr = epic()
     deals["epicFree"] = fr; changed = True
