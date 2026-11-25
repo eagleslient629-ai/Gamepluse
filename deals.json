@@ -93,24 +93,6 @@
  ],
  "trending": [
   {
-   "t": "Steam Machine",
-   "u": "https://store.steampowered.com/app/4165910",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165910/6e3f2fedcd1e7faa80fe3b5c349a62a73dde5d10/header.jpg?t=1794365408",
-   "orig": null,
-   "price": 0,
-   "off": 0,
-   "cur": "INR"
-  },
-  {
-   "t": "Steam Machine",
-   "u": "https://store.steampowered.com/app/4165910",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165910/6e3f2fedcd1e7faa80fe3b5c349a62a73dde5d10/header.jpg?t=1794365408",
-   "orig": null,
-   "price": 0,
-   "off": 0,
-   "cur": "INR"
-  },
-  {
    "t": "Grand Theft Auto V Enhanced",
    "u": "https://store.steampowered.com/app/3240220",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3240220/header.jpg?t=1781187782",
@@ -156,12 +138,12 @@
    "cur": "INR"
   },
   {
-   "t": "Steam Frame",
-   "u": "https://store.steampowered.com/app/4165890",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165890/866449b5fb3696b4c869e954c1e98d1e19df0721/header.jpg?t=1793923703",
-   "orig": null,
-   "price": 0,
-   "off": 0,
+   "t": "007 First Light",
+   "u": "https://store.steampowered.com/app/3768760",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3768760/be65391533f072e79699be70ef2d47b7b2ac57ee/header_alt_assets_5.jpg?t=1795019577",
+   "orig": 349900,
+   "price": 174900,
+   "off": 50,
    "cur": "INR"
   }
  ],
@@ -174,7 +156,7 @@
    "cur": "INR"
   }
  ],
- "updated": "Nov 25, 2026 01:09 PM IST",
+ "updated": "Nov 25, 2026 01:16 PM IST",
  "indies": [
   {
    "t": "Slay the Spire 2",
