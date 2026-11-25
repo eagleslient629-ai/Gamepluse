@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eagleslient629-ai.github.io/Gamepluse/sitemap.xml
