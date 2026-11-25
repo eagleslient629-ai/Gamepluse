@@ -19,6 +19,15 @@
    "cur": "USD"
   },
   {
+   "t": "Warhammer 40,000: Space Marine 2",
+   "u": "https://store.steampowered.com/app/2183900",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/header.jpg?t=1790874369",
+   "orig": 5999,
+   "price": 1499,
+   "off": 75,
+   "cur": "USD"
+  },
+  {
    "t": "Grand Theft Auto V Enhanced",
    "u": "https://store.steampowered.com/app/3240220",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3240220/header.jpg?t=1781187782",
@@ -46,21 +55,21 @@
    "cur": "USD"
   },
   {
-   "t": "Split Fiction",
-   "u": "https://store.steampowered.com/app/2001120",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2001120/header.jpg?t=1763484567",
-   "orig": 4999,
-   "price": 2999,
-   "off": 40,
-   "cur": "USD"
-  },
-  {
    "t": "Baldur's Gate 3",
    "u": "https://store.steampowered.com/app/1086940",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/48a2fcbda8565bb45025e98fd8ebde8a7203f6a0/header.jpg?t=1777363040",
    "orig": 5999,
    "price": 4199,
    "off": 30,
+   "cur": "USD"
+  },
+  {
+   "t": "No Asteroids",
+   "u": "https://store.steampowered.com/app/5527800",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5527800/d62c870790fcce767edd856ce3e7e6df2a9b1395/header.jpg?t=1795542925",
+   "orig": 799,
+   "price": 639,
+   "off": 20,
    "cur": "USD"
   },
   {
@@ -80,61 +89,61 @@
    "price": 5599,
    "off": 20,
    "cur": "USD"
-  },
-  {
-   "t": "PC Store Together",
-   "u": "https://store.steampowered.com/app/4990940",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4990940/ed4ad9ac6b819d4ea1a94ea3cbfdc919713ab0da/header.jpg?t=1795536484",
-   "orig": 1299,
-   "price": 1104,
-   "off": 15,
-   "cur": "USD"
   }
  ],
  "trending": [
   {
+   "t": "Steam Machine",
+   "u": "https://store.steampowered.com/app/4165910",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165910/6e3f2fedcd1e7faa80fe3b5c349a62a73dde5d10/header.jpg?t=1794365408",
+   "orig": 104900,
+   "price": 104900,
+   "off": 0,
+   "cur": "USD"
+  },
+  {
+   "t": "Steam Machine",
+   "u": "https://store.steampowered.com/app/4165910",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165910/6e3f2fedcd1e7faa80fe3b5c349a62a73dde5d10/header.jpg?t=1794365408",
+   "orig": 104900,
+   "price": 104900,
+   "off": 0,
+   "cur": "USD"
+  },
+  {
+   "t": "Steam Frame",
+   "u": "https://store.steampowered.com/app/4165890",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165890/866449b5fb3696b4c869e954c1e98d1e19df0721/header.jpg?t=1793923703",
+   "orig": 105900,
+   "price": 105900,
+   "off": 0,
+   "cur": "USD"
+  },
+  {
+   "t": "Steam Frame",
+   "u": "https://store.steampowered.com/app/4165890",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165890/866449b5fb3696b4c869e954c1e98d1e19df0721/header.jpg?t=1793923703",
+   "orig": 105900,
+   "price": 105900,
+   "off": 0,
+   "cur": "USD"
+  },
+  {
    "t": "Dead by Daylight: Terrifier",
    "u": "https://store.steampowered.com/app/5510420",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5510420/05a33b4c294b9f183c6962898950b97fb460beb7/header.jpg?t=1795539450",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5510420/05a33b4c294b9f183c6962898950b97fb460beb7/header.jpg?t=1795548655",
    "orig": 799,
    "price": 799,
    "off": 0,
    "cur": "USD"
   },
   {
-   "t": "Steam Machine",
-   "u": "https://store.steampowered.com/app/4165910",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165910/6e3f2fedcd1e7faa80fe3b5c349a62a73dde5d10/header.jpg?t=1794365408",
-   "orig": 104900,
-   "price": 104900,
-   "off": 0,
-   "cur": "USD"
-  },
-  {
-   "t": "Steam Machine",
-   "u": "https://store.steampowered.com/app/4165910",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165910/6e3f2fedcd1e7faa80fe3b5c349a62a73dde5d10/header.jpg?t=1794365408",
-   "orig": 104900,
-   "price": 104900,
-   "off": 0,
-   "cur": "USD"
-  },
-  {
-   "t": "Steam Frame",
-   "u": "https://store.steampowered.com/app/4165890",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165890/866449b5fb3696b4c869e954c1e98d1e19df0721/header.jpg?t=1793923703",
-   "orig": 105900,
-   "price": 105900,
-   "off": 0,
-   "cur": "USD"
-  },
-  {
-   "t": "Steam Frame",
-   "u": "https://store.steampowered.com/app/4165890",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165890/866449b5fb3696b4c869e954c1e98d1e19df0721/header.jpg?t=1793923703",
-   "orig": 105900,
-   "price": 105900,
-   "off": 0,
+   "t": "Call of Duty®: Modern Warfare® 4",
+   "u": "https://store.steampowered.com/app/4435490",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4435490/0c492be3204835d71e8b454b6eb1817f8ff68c0d/header.jpg?t=1794873974",
+   "orig": 6999,
+   "price": 5949,
+   "off": 15,
    "cur": "USD"
   },
   {
@@ -152,15 +161,6 @@
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1675200/4c51ecfd17183d45c466ad78f5fdb92920e6224d/header.jpg?t=1781214136",
    "orig": 39900,
    "price": 39900,
-   "off": 0,
-   "cur": "USD"
-  },
-  {
-   "t": "Steam Controller",
-   "u": "https://store.steampowered.com/app/4165870",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165870/92216652a0db709183f802117b47323c3a249433/header.jpg?t=1791403210",
-   "orig": 9900,
-   "price": 9900,
    "off": 0,
    "cur": "USD"
   }
@@ -174,5 +174,5 @@
    "cur": "USD"
   }
  ],
- "updated": "Nov 25, 2026 12:57 AM IST"
+ "updated": "Nov 25, 2026 12:53 PM IST"
 }
