@@ -18,7 +18,7 @@ FEEDS = [
 ]
 PER_FEED = 10
 IST = timezone(timedelta(hours=5, minutes=30))
-UA = {"User-Agent": "Mozilla/5.0 (compatible; gampluse-bot/2.1)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; gampluse-bot/2.2)"}
 PLAT = [
     ("PlayStation", r"playstation|\bps[345]\b|\bpsn\b|\bps plus\b"),
     ("Xbox", r"xbox|game pass"),
@@ -98,23 +98,67 @@ def load_news():
         del i["_ts"]
     return items[:70]
 
+def app_inr_details(appid):
+    # Fetch exact INR regional pricing for a single Steam appid via appdetails
+    try:
+        det = json.loads(get("https://store.steampowered.com/api/appdetails?appids=%s&cc=IN&l=en" % appid, timeout=12))
+        entry = det.get(str(appid), {})
+        if not entry.get("success"):
+            return None
+        data = entry.get("data") or {}
+        po = data.get("price_overview")
+        if not po:
+            return None
+        return {
+            "t": data.get("name"),
+            "u": "https://store.steampowered.com/app/%s" % appid,
+            "img": data.get("header_image") or "https://cdn.cloudflare.steamstatic.com/steam/apps/%s/header.jpg" % appid,
+            "orig": po.get("initial"),
+            "price": po.get("final"),
+            "off": po.get("discount_percent", 0),
+            "cur": po.get("currency", "INR"),
+        }
+    except Exception:
+        return None
+
 def steam():
-    # cc=in fetches official Indian Rupee (INR) regional prices in paise (cents)
-    j = json.loads(get("https://store.steampowered.com/api/featuredcategories?cc=in&l=en"))
+    # Use uppercase cc=IN; if featuredcategories returns 0 prices from US GitHub runners,
+    # enrich each appid directly via appdetails?cc=IN which always returns true INR pricing.
+    j = json.loads(get("https://store.steampowered.com/api/featuredcategories?cc=IN&l=en"))
     def conv(x):
         i = x.get("id")
-        return {"t": x.get("name"), "u": "https://store.steampowered.com/app/%s" % i,
-                "img": x.get("header_image") or "https://cdn.cloudflare.steamstatic.com/steam/apps/%s/header.jpg" % i,
-                "orig": x.get("original_price"), "price": x.get("final_price"),
-                "off": x.get("discount_percent", 0), "cur": x.get("currency", "INR")}
-    sp = [conv(x) for x in j.get("specials", {}).get("items", []) if x.get("discount_percent", 0) > 0 and x.get("id")]
+        if not i:
+            return None
+        orig = x.get("original_price") or 0
+        price = x.get("final_price") or 0
+        cur = x.get("currency") or "INR"
+        if price <= 0 or cur != "INR":
+            enriched = app_inr_details(i)
+            if enriched and (enriched.get("price") or 0) > 0:
+                return enriched
+        if price <= 0:
+            return None
+        return {
+            "t": x.get("name"),
+            "u": "https://store.steampowered.com/app/%s" % i,
+            "img": x.get("header_image") or "https://cdn.cloudflare.steamstatic.com/steam/apps/%s/header.jpg" % i,
+            "orig": orig,
+            "price": price,
+            "off": x.get("discount_percent", 0),
+            "cur": cur,
+        }
+
+    sp_raw = [x for x in j.get("specials", {}).get("items", []) if x.get("discount_percent", 0) > 0 and x.get("id")]
+    sp = [c for c in (conv(x) for x in sp_raw[:16]) if c]
     sp.sort(key=lambda d: d["off"], reverse=True)
-    top = [conv(x) for x in j.get("top_sellers", {}).get("items", []) if x.get("id")]
+
+    top_raw = [x for x in j.get("top_sellers", {}).get("items", []) if x.get("id")]
+    top = [c for c in (conv(x) for x in top_raw[:12]) if c]
     return sp[:12], top[:8]
 
 def steam_indies():
     # Fetch discounted indie games & small studio releases in INR (tag 492 = Indie)
-    url = "https://store.steampowered.com/search/results/?query&start=0&count=18&tags=492&specials=1&cc=in&l=en&json=1"
+    url = "https://store.steampowered.com/search/results/?query&start=0&count=18&tags=492&specials=1&cc=IN&l=en&json=1"
     j = json.loads(get(url))
     out = []
     for it in j.get("items", []):
@@ -123,25 +167,11 @@ def steam_indies():
         if not m:
             continue
         appid = m.group(1)
-        try:
-            det = json.loads(get("https://store.steampowered.com/api/appdetails?appids=%s&cc=in&l=en" % appid, timeout=12))
-            data = det.get(appid, {}).get("data") or {}
-            po = data.get("price_overview")
-            if not po:
-                continue
-            out.append({
-                "t": data.get("name") or it.get("name"),
-                "u": "https://store.steampowered.com/app/%s" % appid,
-                "img": data.get("header_image") or "https://cdn.cloudflare.steamstatic.com/steam/apps/%s/header.jpg" % appid,
-                "orig": po.get("initial"),
-                "price": po.get("final"),
-                "off": po.get("discount_percent", 0),
-                "cur": po.get("currency", "INR"),
-            })
+        enriched = app_inr_details(appid)
+        if enriched and (enriched.get("price") or 0) > 0:
+            out.append(enriched)
             if len(out) >= 8:
                 break
-        except Exception:
-            continue
     return out
 
 def epic():
