@@ -32,22 +32,23 @@ h1{margin:6px 0 10px;font-size:clamp(2rem,8vw,3.4rem);line-height:1.05;text-tran
 h2{margin:34px 0 12px;font-size:1.05rem;text-transform:uppercase;letter-spacing:.2em;display:flex;align-items:center;gap:10px}
 h2:before{content:"";width:6px;height:20px;background:linear-gradient(var(--pu),var(--cy));border-radius:3px;box-shadow:0 0 10px var(--pu)}
 .sub{color:var(--mut);font-size:.82rem;margin:-6px 0 12px}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+.search{flex:1;min-width:210px;padding:9px 14px;border-radius:99px;border:1px solid var(--ln);background:var(--card);color:var(--ink);font:inherit;font-size:.85rem;outline:none}
+.search:focus{border-color:var(--cy);box-shadow:0 0 12px rgba(34,211,238,.2)}
+.search::placeholder{color:var(--mut)}
 .card{display:block;background:var(--card);border:1px solid var(--ln);border-radius:14px;overflow:hidden;transition:.2s}
 a.card:hover{border-color:var(--cy);box-shadow:0 0 18px rgba(34,211,238,.25);transform:translateY(-2px)}
 .card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#0c0f1d}
-.thumb{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#2b1a63,#0b3646);display:flex;align-items:center;justify-content:center;overflow:hidden}
-.thumb .ph{color:rgba(238,240,251,.35);font-weight:900;letter-spacing:.2em;text-transform:uppercase;font-size:.85rem;text-align:center;padding:8px}
-.thumb img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}
 .in{padding:12px 14px 14px}
 .src{color:var(--cy);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
 .card h3{margin:4px 0;font-size:1rem;line-height:1.3}
 .meta{color:var(--mut);font-size:.8rem}
 .tag{display:inline-block;margin:6px 6px 0 0;padding:1px 8px;border:1px solid var(--ln);border-radius:99px;font-size:.68rem;color:var(--mut)}
 .feat{display:grid}
-@media(min-width:760px){.feat h3{font-size:1.5rem}}
+@media(min-width:760px){.feat{grid-template-columns:1.1fr 1fr}.feat img{height:100%;aspect-ratio:auto;min-height:220px}.feat h3{font-size:1.45rem}}
 .feat .in{align-self:center;padding:18px}
 .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
-.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none;flex:1}
 .chip{flex:none;padding:7px 16px;border-radius:99px;border:1px solid var(--ln);background:transparent;color:var(--mut);font:inherit;font-size:.82rem;cursor:pointer}
 .chip.on{background:var(--pu);color:#fff;border-color:var(--pu);box-shadow:0 0 14px rgba(139,92,246,.6)}
 .plat{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
@@ -63,8 +64,10 @@ a.card:hover{border-color:var(--cy);box-shadow:0 0 18px rgba(34,211,238,.25);tra
 .links{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .links a{padding:7px 14px;border:1px solid var(--cy);color:var(--cy);border-radius:10px;font-size:.8rem}
 .poll{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:16px}
-.poll button{display:block;width:100%;text-align:left;margin:8px 0;padding:11px 14px;background:transparent;border:1px solid var(--ln);border-radius:10px;color:var(--ink);font:inherit;cursor:pointer}
-.poll button.on{border-color:var(--cy);background:rgba(34,211,238,.12)}
+.poll-opt{position:relative;display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;margin:8px 0;padding:11px 14px;background:transparent;border:1px solid var(--ln);border-radius:10px;color:var(--ink);font:inherit;cursor:pointer;overflow:hidden}
+.poll-opt .bar{position:absolute;inset:0 auto 0 0;background:rgba(139,92,246,.22);pointer-events:none;transition:width .25s}
+.poll-opt.on{border-color:var(--cy);background:rgba(34,211,238,.12)}
+.poll-opt span{position:relative;z-index:1}
 .empty{color:var(--mut);padding:14px;border:1px dashed var(--ln);border-radius:12px}
 footer{margin-top:44px;border-top:1px solid var(--ln);padding:26px 0 40px;color:var(--mut);font-size:.88rem}
 footer .cols{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
@@ -85,14 +88,18 @@ footer a{color:var(--cy)}
 
 <h2>Featured story</h2><div id="feat"></div>
 <h2 id="latest">Latest news</h2><p class="sub" id="stamp"></p>
-<div class="chips" id="chips"></div><div class="grid" id="list"></div>
+<div class="toolbar">
+  <div class="chips" id="chips"></div>
+  <input class="search" id="q" type="search" placeholder="Search headlines or outlets..." aria-label="Search news">
+</div>
+<div class="grid" id="list"></div>
 <h2 id="platforms">Platforms</h2><div class="plat" id="plat"></div>
 <h2 id="deals">Today's game deals</h2>
 <div class="links"><a href="https://store.steampowered.com/specials" target="_blank" rel="noopener">Steam specials</a><a href="https://store.epicgames.com/en-US/free-games" target="_blank" rel="noopener">Epic free games</a><a href="https://isthereanydeal.com/deals/" target="_blank" rel="noopener">IsThereAnyDeal</a><a href="https://gg.deals/deals/" target="_blank" rel="noopener">GG.deals</a></div>
 <p class="sub" id="dstamp"></p><div class="grid" id="deal"></div>
 <h2 id="trending">Trending games</h2><p class="sub">Top sellers on Steam right now.</p><div class="grid" id="trend"></div>
 <h2 id="community">Community poll</h2>
-<div class="poll"><strong>Which platform do you play on most?</strong><div id="poll"></div><p class="meta">Your vote is saved on this device only. Shared results need a backend, which gampluse doesn't have yet.</p></div>
+<div class="poll"><strong>Which platform do you play on most?</strong><div id="poll"></div><p class="meta" id="pollNote">Your vote is saved on this device only.</p></div>
 </main>
 <footer><div class="w"><div class="cols">
 <div id="about"><h4>About</h4>GAMPLUSE collects gaming headlines and store deals in one place and refreshes them every day at 12:00 AM IST. It's an independent project.</div>
@@ -101,33 +108,58 @@ footer a{color:var(--cy)}
 <div id="privacy"><h4>Privacy</h4>No accounts, no tracking and no cookies from us. The poll vote stays in your browser.</div>
 </div><p>© GAMPLUSE · Mission: next news</p></div></footer>
 <script>
-var $=function(i){return document.getElementById(i)},PL=["PC","PlayStation","Xbox","Nintendo","Mobile"],news=[],flt="All",nShow=8;
+var $=function(i){return document.getElementById(i)},PL=["PC","PlayStation","Xbox","Nintendo","Mobile"],news=[],flt="All",query="",nShow=8;
 function esc(s){var d=document.createElement("div");d.textContent=s==null?"":String(s);return d.innerHTML}
 function ok(u){return /^https:\/\//i.test(u||"")}
 function im(u){return ok(u)?'<img src="'+esc(u)+'" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">':""}
 function money(c,cur){try{return new Intl.NumberFormat("en-US",{style:"currency",currency:cur||"USD"}).format(c/100)}catch(e){return(c/100).toFixed(2)}}
 function get(u){return fetch(u,{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()})}
-function story(x,big){return '<a class="card'+(big?' feat':'')+'" href="'+esc(ok(x.u)?x.u:"#")+'" target="_blank" rel="noopener"><div class="in"><div class="src">'+esc(x.w)+'</div><h3>'+esc(x.t)+'</h3><div class="meta">'+esc(x.d)+'</div>'+(x.p||[]).map(function(p){return'<span class="tag">'+esc(p)+'</span>'}).join("")+'</div></a>'}
+function story(x,big){return '<a class="card'+(big?' feat':'')+'" href="'+esc(ok(x.u)?x.u:"#")+'" target="_blank" rel="noopener">'+(big?im(x.i):"")+'<div class="in"><div class="src">'+esc(x.w)+'</div><h3>'+esc(x.t)+'</h3><div class="meta">'+esc(x.d)+'</div>'+(x.p||[]).map(function(p){return'<span class="tag">'+esc(p)+'</span>'}).join("")+'</div></a>'}
+function matches(x){
+  var pOk=flt==="All"||(x.p||[]).indexOf(flt)>-1;
+  if(!pOk)return false;
+  if(!query)return true;
+  var hay=((x.t||"")+" "+(x.w||"")+" "+(x.p||[]).join(" ")).toLowerCase();
+  return hay.indexOf(query)>-1;
+}
 function draw(){
   var f=news.filter(function(x){return ok(x.i)})[0]||news[0];
   $("feat").innerHTML=f?story(f,1):'<div class="empty">News loads after the first 12:00 AM refresh.</div>';
-  var all=news.filter(function(x){return x!==f&&(flt==="All"||(x.p||[]).indexOf(flt)>-1)}),rest=all.slice(0,nShow);
-  $("list").innerHTML=rest.length?rest.map(function(x){return story(x)}).join("")+(all.length>nShow?'<button class="chip" data-more="n">Show more stories</button>':'') :'<div class="empty">No stories for this filter right now.</div>';
+  var all=news.filter(function(x){return x!==f&&matches(x)}),rest=all.slice(0,nShow);
+  $("list").innerHTML=rest.length?rest.map(function(x){return story(x)}).join("")+(all.length>nShow?'<button class="chip" data-more="n">Show more stories</button>':'') :'<div class="empty">No matching stories right now.</div>';
   $("chips").innerHTML=["All"].concat(PL).map(function(p){return'<button class="chip'+(p===flt?' on':'')+'" data-f="'+p+'">'+p+'</button>'}).join("");
   $("plat").innerHTML=PL.map(function(p){var n=news.filter(function(x){return(x.p||[]).indexOf(p)>-1}).length;return'<button data-f="'+p+'"><strong>'+p+'</strong><span>'+n+' recent stor'+(n===1?'y':'ies')+'</span></button>'}).join("");
 }
 document.addEventListener("click",function(e){if(e.target.closest("[data-more]")){nShow+=8;draw();return}var b=e.target.closest("[data-f]");if(b){flt=b.getAttribute("data-f");nShow=8;draw();$("latest").scrollIntoView()}});
+$("q").addEventListener("input",function(e){query=e.target.value.trim().toLowerCase();nShow=8;draw()});
 function dealCard(x,store,free){var p=free?'<s>'+(x.orig?money(x.orig,x.cur):'')+'</s><em>FREE</em>':(x.off?'<s>'+money(x.orig,x.cur)+'</s>':'')+money(x.price,x.cur);return'<a class="card rel" href="'+esc(ok(x.u)?x.u:"#")+'" target="_blank" rel="noopener">'+(free?'<span class="badge">FREE</span>':x.off?'<span class="badge">-'+esc(x.off)+'%</span>':'')+im(x.img)+'<div class="in"><div class="src">'+store+'</div><h3>'+esc(x.t)+'</h3><div class="price">'+p+'</div></div></a>'}
-get("news.json").then(function(j){news=(j.items||[]).map(function(x){if(!x.p){x.p=[];var t=x.t||"";[["PlayStation",/playstation|ps[345]|ps plus/i],["Xbox",/xbox|game pass/i],["Nintendo",/nintendo|switch|zelda|mario|pok[eé]mon|kirby|metroid/i],["Mobile",/mobile|ios|android|iphone/i],["PC",/pc|steam|epic games|nvidia|geforce|amd|windows|gog/i]].forEach(function(r){if(r[1].test(t))x.p.push(r[0])})}return x});if(j.updated)$("stamp").textContent="Refreshed daily at 12:00 AM IST. Last refreshed: "+j.updated+".";draw()}).catch(function(){draw()});
+get("news.json").then(function(j){news=(j.items||[]).map(function(x){if(!x.p){x.p=[];var t=x.t||"";[["PlayStation",/playstation|\bps[345]\b|ps plus/i],["Xbox",/xbox|game pass/i],["Nintendo",/nintendo|\bswitch\b|zelda|mario|pok[eé]mon|kirby|metroid/i],["Mobile",/\bmobile\b|\bios\b|android|iphone/i],["PC",/\bpc\b|steam|epic games|nvidia|geforce|\bamd\b|windows|\bgog\b/i]].forEach(function(r){if(r[1].test(t))x.p.push(r[0])})}return x});if(j.updated)$("stamp").textContent="Refreshed daily at 12:00 AM IST. Last refreshed: "+j.updated+".";draw()}).catch(function(){draw()});
 get("deals.json").then(function(j){
   var h=(j.epicFree||[]).map(function(x){return dealCard(x,"Epic Games Store",1)}).join("")+(j.steam||[]).slice(0,8).map(function(x){return dealCard(x,"Steam")}).join("");
   $("deal").innerHTML=h||'<div class="empty">Live prices appear after the next refresh. Use the store links above.</div>';
   if(j.updated)$("dstamp").textContent="Prices in USD from the store, as of "+j.updated+". Check the store for your region.";
   $("trend").innerHTML=(j.trending||[]).slice(0,6).map(function(x){return dealCard(x,"Steam")}).join("")||'<div class="empty">Trending list appears after the next refresh.</div>';
 }).catch(function(){$("deal").innerHTML='<div class="empty">Live prices appear after the next refresh. Use the store links above.</div>';$("trend").innerHTML='<div class="empty">Trending list appears after the next refresh.</div>'});
-function poll(){var v=null;try{v=localStorage.getItem("gp_vote")}catch(e){}
-  $("poll").innerHTML=PL.map(function(p){return'<button data-v="'+p+'" class="'+(p===v?'on':'')+'">'+p+(p===v?' ✓ your vote':'')+'</button>'}).join("")}
-document.addEventListener("click",function(e){var b=e.target.closest("[data-v]");if(b){try{localStorage.setItem("gp_vote",b.getAttribute("data-v"))}catch(x){}poll()}});
+function loadCounts(){try{return JSON.parse(localStorage.getItem("gp_counts")||"{}")}catch(e){return{}}}
+function poll(){
+  var v=null;try{v=localStorage.getItem("gp_vote")}catch(e){}
+  var c=loadCounts(),total=0;
+  PL.forEach(function(p){total+=(c[p]||0)});
+  $("poll").innerHTML=PL.map(function(p){
+    var n=c[p]||0,pct=total?Math.round((n/total)*100):0;
+    return'<button class="poll-opt'+(p===v?' on':'')+'" data-v="'+p+'"><span class="bar" style="width:'+pct+'%"></span><span>'+p+(p===v?' ✓ your vote':'')+'</span><span>'+(total?pct+'% ('+n+')':'')+'</span></button>';
+  }).join("");
+}
+document.addEventListener("click",function(e){
+  var b=e.target.closest("[data-v]");
+  if(!b)return;
+  var p=b.getAttribute("data-v"),prev=null,c=loadCounts();
+  try{prev=localStorage.getItem("gp_vote")}catch(x){}
+  if(prev && prev!==p && c[prev]>0)c[prev]-=1;
+  if(prev!==p){c[p]=(c[p]||0)+1;try{localStorage.setItem("gp_vote",p)}catch(x){}}
+  try{localStorage.setItem("gp_counts",JSON.stringify(c))}catch(x){}
+  poll();
+});
 poll();
 </script>
 </body>
