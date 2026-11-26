@@ -18,7 +18,7 @@ FEEDS = [
 ]
 PER_FEED = 10
 IST = timezone(timedelta(hours=5, minutes=30))
-UA = {"User-Agent": "Mozilla/5.0 (compatible; gampluse-bot/2.2)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; gampluse-bot/2.3)"}
 PLAT = [
     ("PlayStation", r"playstation|\bps[345]\b|\bpsn\b|\bps plus\b"),
     ("Xbox", r"xbox|game pass"),
@@ -27,6 +27,10 @@ PLAT = [
     ("PC", r"\bpc\b|steam|epic games|nvidia|geforce|\bamd\b|windows|\bgog\b|itch\.io"),
     ("Indie", r"\bindie\b|solo dev|roguelike|pixel art|itch\.io|small studio"),
 ]
+BLOCKED_TITLE_RE = re.compile(r"\bsteam\s*machine\b", re.I)
+
+def is_blocked(title):
+    return bool(title and BLOCKED_TITLE_RE.search(title))
 
 def get(url, timeout=25):
     return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout).read()
@@ -84,6 +88,8 @@ def load_news():
                 link = (f["link"].text or "").strip() if "link" in f else ""
                 if "link" in f and not link:
                     link = f["link"].attrib.get("href", "")
+                if is_blocked(title):
+                    continue
                 when = next((f[k].text for k in ("pubDate", "published", "updated") if k in f and f[k].text), None)
                 d = parse_date(when)
                 if title and link.startswith("http") and link not in seen:
@@ -99,18 +105,20 @@ def load_news():
     return items[:70]
 
 def app_inr_details(appid):
-    # Fetch exact INR regional pricing for a single Steam appid via appdetails
     try:
         det = json.loads(get("https://store.steampowered.com/api/appdetails?appids=%s&cc=IN&l=en" % appid, timeout=12))
         entry = det.get(str(appid), {})
         if not entry.get("success"):
             return None
         data = entry.get("data") or {}
+        name = data.get("name")
+        if is_blocked(name):
+            return None
         po = data.get("price_overview")
         if not po:
             return None
         return {
-            "t": data.get("name"),
+            "t": name,
             "u": "https://store.steampowered.com/app/%s" % appid,
             "img": data.get("header_image") or "https://cdn.cloudflare.steamstatic.com/steam/apps/%s/header.jpg" % appid,
             "orig": po.get("initial"),
@@ -122,12 +130,11 @@ def app_inr_details(appid):
         return None
 
 def steam():
-    # Use uppercase cc=IN; if featuredcategories returns 0 prices from US GitHub runners,
-    # enrich each appid directly via appdetails?cc=IN which always returns true INR pricing.
     j = json.loads(get("https://store.steampowered.com/api/featuredcategories?cc=IN&l=en"))
     def conv(x):
         i = x.get("id")
-        if not i:
+        name = x.get("name")
+        if not i or is_blocked(name):
             return None
         orig = x.get("original_price") or 0
         price = x.get("final_price") or 0
@@ -139,7 +146,7 @@ def steam():
         if price <= 0:
             return None
         return {
-            "t": x.get("name"),
+            "t": name,
             "u": "https://store.steampowered.com/app/%s" % i,
             "img": x.get("header_image") or "https://cdn.cloudflare.steamstatic.com/steam/apps/%s/header.jpg" % i,
             "orig": orig,
@@ -157,11 +164,12 @@ def steam():
     return sp[:12], top[:8]
 
 def steam_indies():
-    # Fetch discounted indie games & small studio releases in INR (tag 492 = Indie)
     url = "https://store.steampowered.com/search/results/?query&start=0&count=18&tags=492&specials=1&cc=IN&l=en&json=1"
     j = json.loads(get(url))
     out = []
     for it in j.get("items", []):
+        if is_blocked(it.get("name")):
+            continue
         logo = it.get("logo", "")
         m = re.search(r"/apps/(\d+)/", logo)
         if not m:
@@ -178,6 +186,9 @@ def epic():
     j = json.loads(get("https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions?locale=en-US&country=IN&allowCountries=IN"))
     out = []
     for el in j["data"]["Catalog"]["searchStore"]["elements"]:
+        title = el.get("title")
+        if is_blocked(title):
+            continue
         promos = (el.get("promotions") or {}).get("promotionalOffers") or []
         price = (el.get("price") or {}).get("totalPrice") or {}
         if not promos or price.get("discountPrice") != 0:
@@ -189,7 +200,7 @@ def epic():
         imgs = el.get("keyImages") or []
         img = next((x["url"] for x in imgs if x.get("type") in ("OfferImageWide", "DieselStoreFrontWide")),
                    imgs[0]["url"] if imgs else "")
-        out.append({"t": el.get("title"), "u": "https://store.epicgames.com/en-US/p/" + slug, "img": img,
+        out.append({"t": title, "u": "https://store.epicgames.com/en-US/p/" + slug, "img": img,
                     "orig": price.get("originalPrice"), "cur": price.get("currencyCode", "INR")})
     return out
 
