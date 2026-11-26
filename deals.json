@@ -28,12 +28,21 @@
    "cur": "INR"
   },
   {
-   "t": "Warhammer 40,000: Space Marine 2",
-   "u": "https://store.steampowered.com/app/2183900",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/header.jpg?t=1790874369",
-   "orig": 339900,
-   "price": 84900,
-   "off": 75,
+   "t": "SILENT HILL f",
+   "u": "https://store.steampowered.com/app/2947440",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2947440/7e5d923ac622bd1775ebc9b5d4b5b0a24bf5ed40/header.jpg?t=1770169624",
+   "orig": 320000,
+   "price": 89600,
+   "off": 72,
+   "cur": "INR"
+  },
+  {
+   "t": "SILENT HILL 2 & SILENT HILL f Standard Dual Pack",
+   "u": "https://store.steampowered.com/app/1412913",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/subs/1412913/7a18bda5c6ec6a6a53a880ec4451349ab4da1bfe/header_ratio.jpg?t=1764007149",
+   "orig": 440000,
+   "price": 154000,
+   "off": 65,
    "cur": "INR"
   },
   {
@@ -48,19 +57,19 @@
   {
    "t": "007 First Light",
    "u": "https://store.steampowered.com/app/3768760",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3768760/be65391533f072e79699be70ef2d47b7b2ac57ee/header_alt_assets_5.jpg?t=1795019577",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3768760/be65391533f072e79699be70ef2d47b7b2ac57ee/header_alt_assets_5.jpg?t=1795703859",
    "orig": 349900,
    "price": 174900,
    "off": 50,
    "cur": "INR"
   },
   {
-   "t": "Ghost of Tsushima DIRECTOR'S CUT",
-   "u": "https://store.steampowered.com/app/2215430",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215430/header.jpg?t=1763409398",
-   "orig": 399900,
-   "price": 199900,
-   "off": 50,
+   "t": "Split Fiction",
+   "u": "https://store.steampowered.com/app/2001120",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2001120/header.jpg?t=1763484567",
+   "orig": 249900,
+   "price": 149900,
+   "off": 40,
    "cur": "INR"
   },
   {
@@ -73,20 +82,11 @@
    "cur": "INR"
   },
   {
-   "t": "No Asteroids",
-   "u": "https://store.steampowered.com/app/5527800",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5527800/d62c870790fcce767edd856ce3e7e6df2a9b1395/header.jpg?t=1795542925",
-   "orig": 40900,
-   "price": 32700,
-   "off": 20,
-   "cur": "INR"
-  },
-  {
-   "t": "Crimson Desert Enhanced",
-   "u": "https://store.steampowered.com/app/3321460",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3321460/236f3814be7a97d86831800691b6096d449222a8/header.jpg?t=1794478066",
-   "orig": 449900,
-   "price": 359900,
+   "t": "STAR WARS: Galactic Racer™",
+   "u": "https://store.steampowered.com/app/4078430",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4078430/97215eb609882139ce6a28419116be23fcf5ac86/header.jpg?t=1795526138",
+   "orig": 279900,
+   "price": 223900,
    "off": 20,
    "cur": "INR"
   }
@@ -129,21 +129,21 @@
    "cur": "INR"
   },
   {
-   "t": "007 First Light",
-   "u": "https://store.steampowered.com/app/3768760",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3768760/be65391533f072e79699be70ef2d47b7b2ac57ee/header_alt_assets_5.jpg?t=1795019577",
-   "orig": 349900,
-   "price": 174900,
-   "off": 50,
-   "cur": "INR"
-  },
-  {
    "t": "Call of Duty®: Modern Warfare® 4",
    "u": "https://store.steampowered.com/app/4435490",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4435490/0c492be3204835d71e8b454b6eb1817f8ff68c0d/header.jpg?t=1794873974",
    "orig": 499900,
    "price": 424900,
    "off": 15,
+   "cur": "INR"
+  },
+  {
+   "t": "Baldur's Gate 3",
+   "u": "https://store.steampowered.com/app/1086940",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/48a2fcbda8565bb45025e98fd8ebde8a7203f6a0/header.jpg?t=1777363040",
+   "orig": 299900,
+   "price": 209900,
+   "off": 30,
    "cur": "INR"
   }
  ],
@@ -156,7 +156,7 @@
    "cur": "INR"
   }
  ],
- "updated": "Nov 26, 2026 12:53 AM IST",
+ "updated": "Nov 26, 2026 09:25 PM IST",
  "indies": [
   {
    "t": "Slay the Spire 2",
@@ -164,6 +164,15 @@
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/b0958d387dc366211e0f353443710cfcf9fdb020/header.jpg?t=1787169309",
    "orig": 110000,
    "price": 88000,
+   "off": 20,
+   "cur": "INR"
+  },
+  {
+   "t": "Dressmaker",
+   "u": "https://store.steampowered.com/app/4019220",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4019220/f1cd08127872e60e4c47a4bc3e40d682d94741bf/header.jpg?t=1794041965",
+   "orig": 71900,
+   "price": 57500,
    "off": 20,
    "cur": "INR"
   },
@@ -177,15 +186,6 @@
    "cur": "INR"
   },
   {
-   "t": "Hades II",
-   "u": "https://store.steampowered.com/app/1145350",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145350/91ac334a2c137d08968ccc0bc474a02579602100/header.jpg?t=1779901265",
-   "orig": 130000,
-   "price": 91000,
-   "off": 30,
-   "cur": "INR"
-  },
-  {
    "t": "Risk of Rain 2",
    "u": "https://store.steampowered.com/app/632360",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/632360/header.jpg?t=1791475448",
@@ -195,30 +195,21 @@
    "cur": "INR"
   },
   {
-   "t": "PC Store Together",
-   "u": "https://store.steampowered.com/app/4990940",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4990940/ed4ad9ac6b819d4ea1a94ea3cbfdc919713ab0da/header.jpg?t=1795536484",
-   "orig": 64900,
-   "price": 55100,
-   "off": 15,
-   "cur": "INR"
-  },
-  {
-   "t": "Hades",
-   "u": "https://store.steampowered.com/app/1145360",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145360/header.jpg?t=1758127023",
-   "orig": 110000,
-   "price": 27500,
-   "off": 75,
-   "cur": "INR"
-  },
-  {
-   "t": "Dressmaker",
-   "u": "https://store.steampowered.com/app/4019220",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4019220/f1cd08127872e60e4c47a4bc3e40d682d94741bf/header.jpg?t=1794041965",
-   "orig": 71900,
-   "price": 57500,
+   "t": "Reshine",
+   "u": "https://store.steampowered.com/app/4253570",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4253570/646bb149524f3e9fbe8e294fccf88c6d91247ac2/header_alt_assets_1.jpg?t=1795705673",
+   "orig": 44900,
+   "price": 35900,
    "off": 20,
+   "cur": "INR"
+  },
+  {
+   "t": "Hades II",
+   "u": "https://store.steampowered.com/app/1145350",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145350/91ac334a2c137d08968ccc0bc474a02579602100/header.jpg?t=1779901265",
+   "orig": 130000,
+   "price": 91000,
+   "off": 30,
    "cur": "INR"
   },
   {
@@ -228,6 +219,15 @@
    "orig": 41500,
    "price": 24900,
    "off": 40,
+   "cur": "INR"
+  },
+  {
+   "t": "Hades",
+   "u": "https://store.steampowered.com/app/1145360",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145360/header.jpg?t=1758127023",
+   "orig": 110000,
+   "price": 27500,
+   "off": 75,
    "cur": "INR"
   }
  ]
