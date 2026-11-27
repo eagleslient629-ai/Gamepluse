@@ -1,15 +1,6 @@
 {
  "steam": [
   {
-   "t": "Detroit: Become Human",
-   "u": "https://store.steampowered.com/app/1222140",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222140/header.jpg?t=1667468479",
-   "orig": 199900,
-   "price": 19900,
-   "off": 90,
-   "cur": "INR"
-  },
-  {
    "t": "Red Dead Redemption 2",
    "u": "https://store.steampowered.com/app/1174180",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg?t=1759502961",
@@ -25,6 +16,15 @@
    "orig": 320000,
    "price": 89600,
    "off": 72,
+   "cur": "INR"
+  },
+  {
+   "t": "Cyberpunk 2077",
+   "u": "https://store.steampowered.com/app/1091500",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/48a93d6445a67520ea49833c93dae8f2e68fc540/header_alt_assets_9.jpg?t=1794474878",
+   "orig": 299900,
+   "price": 89900,
+   "off": 70,
    "cur": "INR"
   },
   {
@@ -64,6 +64,15 @@
    "cur": "INR"
   },
   {
+   "t": "Cyberpunk 2077: Phantom Liberty",
+   "u": "https://store.steampowered.com/app/2138330",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2138330/bdbeea292270b8cd9dde1f2044a411624db58657/header.jpg?t=1794474915",
+   "orig": 149900,
+   "price": 89900,
+   "off": 40,
+   "cur": "INR"
+  },
+  {
    "t": "Baldur's Gate 3",
    "u": "https://store.steampowered.com/app/1086940",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/48a2fcbda8565bb45025e98fd8ebde8a7203f6a0/header.jpg?t=1777363040",
@@ -80,18 +89,27 @@
    "price": 223900,
    "off": 20,
    "cur": "INR"
-  },
-  {
-   "t": "Crimson Desert Enhanced",
-   "u": "https://store.steampowered.com/app/3321460",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3321460/236f3814be7a97d86831800691b6096d449222a8/header.jpg?t=1794478066",
-   "orig": 449900,
-   "price": 359900,
-   "off": 20,
-   "cur": "INR"
   }
  ],
  "trending": [
+  {
+   "t": "Cyberpunk 2077: Ultimate Edition",
+   "u": "https://store.steampowered.com/app/32470",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/bundles/32470/5htp7gjbzhjufq5c/67f4f047da1935d1efe1c4a4697011951be5b534/header_ratio.jpg?t=1746520128",
+   "orig": 449800,
+   "price": 165400,
+   "off": 60,
+   "cur": "INR"
+  },
+  {
+   "t": "Cyberpunk 2077",
+   "u": "https://store.steampowered.com/app/1091500",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/48a93d6445a67520ea49833c93dae8f2e68fc540/header_alt_assets_9.jpg?t=1794474878",
+   "orig": 299900,
+   "price": 89900,
+   "off": 70,
+   "cur": "INR"
+  },
   {
    "t": "Warhammer 40,000: Dawn of War IV Commander Edition",
    "u": "https://store.steampowered.com/app/1624417",
@@ -102,30 +120,30 @@
    "cur": "INR"
   },
   {
-   "t": "Grand Theft Auto V Enhanced",
-   "u": "https://store.steampowered.com/app/3240220",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3240220/header.jpg?t=1781187782",
-   "orig": 374900,
-   "price": 164900,
-   "off": 56,
-   "cur": "INR"
-  },
-  {
-   "t": "Grand Theft Auto V Enhanced",
-   "u": "https://store.steampowered.com/app/3240220",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3240220/header.jpg?t=1781187782",
-   "orig": 374900,
-   "price": 164900,
-   "off": 56,
-   "cur": "INR"
-  },
-  {
    "t": "Red Dead Redemption 2",
    "u": "https://store.steampowered.com/app/1174180",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg?t=1759502961",
    "orig": 499900,
    "price": 124900,
    "off": 75,
+   "cur": "INR"
+  },
+  {
+   "t": "Grand Theft Auto V Enhanced",
+   "u": "https://store.steampowered.com/app/3240220",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3240220/header.jpg?t=1781187782",
+   "orig": 374900,
+   "price": 164900,
+   "off": 56,
+   "cur": "INR"
+  },
+  {
+   "t": "Grand Theft Auto V Enhanced",
+   "u": "https://store.steampowered.com/app/3240220",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3240220/header.jpg?t=1781187782",
+   "orig": 374900,
+   "price": 164900,
+   "off": 56,
    "cur": "INR"
   }
  ],
@@ -145,7 +163,7 @@
    "cur": "INR"
   }
  ],
- "updated": "Nov 27, 2026 12:59 AM IST",
+ "updated": "Nov 28, 2026 12:56 AM IST",
  "indies": [
   {
    "t": "Dressmaker",
@@ -159,18 +177,9 @@
   {
    "t": "Reshine",
    "u": "https://store.steampowered.com/app/4253570",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4253570/646bb149524f3e9fbe8e294fccf88c6d91247ac2/header_alt_assets_1.jpg?t=1795708896",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4253570/646bb149524f3e9fbe8e294fccf88c6d91247ac2/header_alt_assets_1.jpg?t=1795802478",
    "orig": 44900,
    "price": 35900,
-   "off": 20,
-   "cur": "INR"
-  },
-  {
-   "t": "SHRED A BILLION",
-   "u": "https://store.steampowered.com/app/5472080",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5472080/4584864fda356b4d391b69cc2c0ea73bc286db3d/header.jpg?t=1795708786",
-   "orig": 36900,
-   "price": 29500,
    "off": 20,
    "cur": "INR"
   },
@@ -184,6 +193,15 @@
    "cur": "INR"
   },
   {
+   "t": "Am I Nima",
+   "u": "https://store.steampowered.com/app/3224600",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3224600/ec4c212665296bd88ee2cb506455d6b1ceeb2c30/header.jpg?t=1795801195",
+   "orig": 90900,
+   "price": 81800,
+   "off": 10,
+   "cur": "INR"
+  },
+  {
    "t": "Cuphead",
    "u": "https://store.steampowered.com/app/268910",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/268910/header.jpg?t=1709068852",
@@ -193,21 +211,21 @@
    "cur": "INR"
   },
   {
+   "t": "SHRED A BILLION",
+   "u": "https://store.steampowered.com/app/5472080",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5472080/4584864fda356b4d391b69cc2c0ea73bc286db3d/header.jpg?t=1795766675",
+   "orig": 36900,
+   "price": 29500,
+   "off": 20,
+   "cur": "INR"
+  },
+  {
    "t": "Hades II",
    "u": "https://store.steampowered.com/app/1145350",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145350/91ac334a2c137d08968ccc0bc474a02579602100/header.jpg?t=1779901265",
    "orig": 130000,
    "price": 91000,
    "off": 30,
-   "cur": "INR"
-  },
-  {
-   "t": "PC Store Together",
-   "u": "https://store.steampowered.com/app/4990940",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4990940/ed4ad9ac6b819d4ea1a94ea3cbfdc919713ab0da/header.jpg?t=1795715421",
-   "orig": 64900,
-   "price": 55100,
-   "off": 15,
    "cur": "INR"
   },
   {
