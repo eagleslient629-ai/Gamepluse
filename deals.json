@@ -1,6 +1,24 @@
 {
  "steam": [
   {
+   "t": "Detroit: Become Human",
+   "u": "https://store.steampowered.com/app/1222140",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222140/header.jpg?t=1667468479",
+   "orig": 199900,
+   "price": 19900,
+   "off": 90,
+   "cur": "INR"
+  },
+  {
+   "t": "It Takes Two",
+   "u": "https://store.steampowered.com/app/1426210",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1426210/header.jpg?t=1777395376",
+   "orig": 219900,
+   "price": 43900,
+   "off": 80,
+   "cur": "INR"
+  },
+  {
    "t": "Red Dead Redemption 2",
    "u": "https://store.steampowered.com/app/1174180",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg?t=1759502961",
@@ -28,15 +46,6 @@
    "cur": "INR"
   },
   {
-   "t": "SILENT HILL 2 & SILENT HILL f Standard Dual Pack",
-   "u": "https://store.steampowered.com/app/1412913",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/subs/1412913/7a18bda5c6ec6a6a53a880ec4451349ab4da1bfe/header_ratio.jpg?t=1764007149",
-   "orig": 440000,
-   "price": 154000,
-   "off": 65,
-   "cur": "INR"
-  },
-  {
    "t": "Grand Theft Auto V Enhanced",
    "u": "https://store.steampowered.com/app/3240220",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3240220/header.jpg?t=1781187782",
@@ -51,15 +60,6 @@
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3768760/be65391533f072e79699be70ef2d47b7b2ac57ee/header_alt_assets_5.jpg?t=1795703859",
    "orig": 349900,
    "price": 174900,
-   "off": 50,
-   "cur": "INR"
-  },
-  {
-   "t": "Ghost of Tsushima DIRECTOR'S CUT",
-   "u": "https://store.steampowered.com/app/2215430",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215430/header.jpg?t=1763409398",
-   "orig": 399900,
-   "price": 199900,
    "off": 50,
    "cur": "INR"
   },
@@ -82,34 +82,16 @@
    "cur": "INR"
   },
   {
-   "t": "STAR WARS: Galactic Racer™",
-   "u": "https://store.steampowered.com/app/4078430",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4078430/97215eb609882139ce6a28419116be23fcf5ac86/header.jpg?t=1795526138",
-   "orig": 279900,
-   "price": 223900,
+   "t": "Crimson Desert Enhanced",
+   "u": "https://store.steampowered.com/app/3321460",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3321460/236f3814be7a97d86831800691b6096d449222a8/header.jpg?t=1795743151",
+   "orig": 449900,
+   "price": 359900,
    "off": 20,
    "cur": "INR"
   }
  ],
  "trending": [
-  {
-   "t": "Cyberpunk 2077: Ultimate Edition",
-   "u": "https://store.steampowered.com/app/32470",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/bundles/32470/5htp7gjbzhjufq5c/67f4f047da1935d1efe1c4a4697011951be5b534/header_ratio.jpg?t=1746520128",
-   "orig": 449800,
-   "price": 165400,
-   "off": 60,
-   "cur": "INR"
-  },
-  {
-   "t": "Cyberpunk 2077",
-   "u": "https://store.steampowered.com/app/1091500",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/48a93d6445a67520ea49833c93dae8f2e68fc540/header_alt_assets_9.jpg?t=1794474878",
-   "orig": 299900,
-   "price": 89900,
-   "off": 70,
-   "cur": "INR"
-  },
   {
    "t": "Warhammer 40,000: Dawn of War IV Commander Edition",
    "u": "https://store.steampowered.com/app/1624417",
@@ -117,6 +99,15 @@
    "orig": 629900,
    "price": 566900,
    "off": 10,
+   "cur": "INR"
+  },
+  {
+   "t": "Cyberpunk 2077: Ultimate Edition",
+   "u": "https://store.steampowered.com/app/32470",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/bundles/32470/5htp7gjbzhjufq5c/67f4f047da1935d1efe1c4a4697011951be5b534/header_ratio.jpg?t=1746520128",
+   "orig": 449800,
+   "price": 165400,
+   "off": 60,
    "cur": "INR"
   },
   {
@@ -129,6 +120,15 @@
    "cur": "INR"
   },
   {
+   "t": "Cyberpunk 2077",
+   "u": "https://store.steampowered.com/app/1091500",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/48a93d6445a67520ea49833c93dae8f2e68fc540/header_alt_assets_9.jpg?t=1794474878",
+   "orig": 299900,
+   "price": 89900,
+   "off": 70,
+   "cur": "INR"
+  },
+  {
    "t": "Grand Theft Auto V Enhanced",
    "u": "https://store.steampowered.com/app/3240220",
    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3240220/header.jpg?t=1781187782",
@@ -144,6 +144,15 @@
    "orig": 374900,
    "price": 164900,
    "off": 56,
+   "cur": "INR"
+  },
+  {
+   "t": "Call of Duty®: Modern Warfare® 4",
+   "u": "https://store.steampowered.com/app/4435490",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4435490/0c492be3204835d71e8b454b6eb1817f8ff68c0d/header.jpg?t=1794873974",
+   "orig": 499900,
+   "price": 424900,
+   "off": 15,
    "cur": "INR"
   }
  ],
@@ -163,8 +172,17 @@
    "cur": "INR"
   }
  ],
- "updated": "Nov 28, 2026 12:56 AM IST",
+ "updated": "Nov 29, 2026 12:54 AM IST",
  "indies": [
+  {
+   "t": "RimWorld",
+   "u": "https://store.steampowered.com/app/294100",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/294100/76e0613b8197327299d5dbabb0a7fd7828a689a2/header.jpg?t=1782756789",
+   "orig": 150000,
+   "price": 120000,
+   "off": 20,
+   "cur": "INR"
+  },
   {
    "t": "Dressmaker",
    "u": "https://store.steampowered.com/app/4019220",
@@ -172,24 +190,6 @@
    "orig": 71900,
    "price": 57500,
    "off": 20,
-   "cur": "INR"
-  },
-  {
-   "t": "Reshine",
-   "u": "https://store.steampowered.com/app/4253570",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4253570/646bb149524f3e9fbe8e294fccf88c6d91247ac2/header_alt_assets_1.jpg?t=1795802478",
-   "orig": 44900,
-   "price": 35900,
-   "off": 20,
-   "cur": "INR"
-  },
-  {
-   "t": "Risk of Rain 2",
-   "u": "https://store.steampowered.com/app/632360",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/632360/header.jpg?t=1791475448",
-   "orig": 71900,
-   "price": 23700,
-   "off": 67,
    "cur": "INR"
   },
   {
@@ -202,12 +202,12 @@
    "cur": "INR"
   },
   {
-   "t": "Cuphead",
-   "u": "https://store.steampowered.com/app/268910",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/268910/header.jpg?t=1709068852",
-   "orig": 56500,
-   "price": 39500,
-   "off": 30,
+   "t": "Risk of Rain 2",
+   "u": "https://store.steampowered.com/app/632360",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/632360/header.jpg?t=1791475448",
+   "orig": 71900,
+   "price": 23700,
+   "off": 67,
    "cur": "INR"
   },
   {
@@ -229,12 +229,21 @@
    "cur": "INR"
   },
   {
-   "t": "Hades",
-   "u": "https://store.steampowered.com/app/1145360",
-   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145360/header.jpg?t=1758127023",
-   "orig": 110000,
-   "price": 27500,
-   "off": 75,
+   "t": "Cuphead",
+   "u": "https://store.steampowered.com/app/268910",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/268910/header.jpg?t=1709068852",
+   "orig": 56500,
+   "price": 39500,
+   "off": 30,
+   "cur": "INR"
+  },
+  {
+   "t": "Reshine",
+   "u": "https://store.steampowered.com/app/4253570",
+   "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4253570/646bb149524f3e9fbe8e294fccf88c6d91247ac2/header_alt_assets_1.jpg?t=1795802478",
+   "orig": 44900,
+   "price": 35900,
+   "off": 20,
    "cur": "INR"
   }
  ]
